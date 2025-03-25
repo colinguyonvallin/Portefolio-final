@@ -1,0 +1,141 @@
+<!DOCTYPE html> <!-- Déclaration du type de document HTML -->
+<html lang="fr" id="passions-page"> <!-- Début du document HTML avec la langue définie en français -->
+
+<head>
+    <meta charset="UTF-8"> <!-- Encodage des caractères en UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Réglage de la mise en page pour les mobiles -->
+    <title>Mes Passions</title> <!-- Titre de la page affiché dans l'onglet du navigateur -->
+    <link rel="stylesheet" href="../styles/styles.css"> <!-- Inclusion du fichier CSS pour les styles -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () { // Exécuter ce code après le chargement de la page
+            const elements = [
+                { id: 'photo_scene', details: 'photoSceneDetails', imgSrc: 'photo_scene.jpg', text: "Voici une photo de moi sur scène lors d'une performance." },
+                { id: 'guitare', details: 'guitareDetails', imgSrc: 'ma_guitare.jpg', text: "Voici ma guitare électrique. Elle m'accompagne depuis deux ans maintenant. J'ai choisi une stratocaster car cette guitare mythique est utilisée par beaucoup de guitaristes comme  -M-, John Frusciante, Jimi Hendrix, David Gilmour... et j'en passe..." },
+                { id: 'chedid', details: 'chedidDetails', imgSrc: 'matthieu_chedid.jpg', text: "Matthieu Chedid en live avec sa mythique guitare Fender Stratocaster série L de 1962, une série de guitare les plus mythiques car ce sont les meilleures guitares fabriquées par Fender à cette époque." },
+                { id: 'frusciante', details: 'fruscianteDetails', imgSrc: 'playing-guitar-john-frusciante.gif', text: "John Frusciante, grand guitariste des Red Hot Chili Peppers, son jeu unique et ses riffs de guitare immersifs m'entraînent dans la musique pure et ses sons de guitare, ses solos sont une grande inspiration pour moi." },
+                { id: 'bertignac', details: 'bertignacDetails', imgSrc: 'louis_bertignac.jpg', text: "Louis Bertignac, connu pour avoir été le guitariste de Téléphone dans les années 80, ce groupe a marqué une génération dans la musique pop/rock. Avec ses riffs de guitare connus et ses solos emblématiques, Louis Bertignac est pour moi une inspiration dans le jeu technique de la guitare, sa technique pour l'improvisation et sa créativité, sa puissance et son énergie sur scène." },
+                { id: 'page', details: 'pageDetails', imgSrc: 'jimmy_page1.gif', text: "Jimmy Page, guitariste légendaire de Led Zeppelin, connu pour ses riffs puissants et ses solos envoûtants. Sa technique et sa créativité ont fait de lui une icône du rock." },
+                { id: 'gilmour', details: 'gilmourDetails', imgSrc: 'david_gilmour1.gif', text: "David Gilmour, guitariste et chanteur de Pink Floyd, célèbre pour ses solos mélodiques et ses sons atmosphériques. Son jeu de guitare est une source d'inspiration inépuisable pour moi." }
+            ];
+
+            elements.forEach(element => { // Boucle à travers chaque élément dans la liste
+                const el = document.getElementById(element.id); // Sélectionne l'élément par son ID
+                el.addEventListener('mouseover', function () { // Ajoute un effet de surbrillance au survol
+                    el.classList.add('highlight');
+                });
+                el.addEventListener('mouseout', function () { // Supprime l'effet de surbrillance lorsque la souris quitte l'élément
+                    el.classList.remove('highlight');
+                });
+                el.addEventListener('click', function () { // Affiche une popup lorsque l'élément est cliqué
+                    document.querySelector('main').classList.add('blurred-background');
+                    const popup = document.createElement('div');
+                    popup.classList.add('popup');
+                    popup.innerHTML = `
+                        <img src="${element.imgSrc}" alt="${element.id}">
+                        <div class="popup-text">${element.text}</div>
+                        <button onclick="closePopup()">Retour</button>
+                    `;
+                    document.body.appendChild(popup);
+
+                    window.closePopup = function () { // Fonction pour fermer la popup
+                        document.body.removeChild(popup);
+                        document.querySelector('main').classList.remove('blurred-background');
+                    };
+                });
+            });
+        });
+    </script> <!--Fermeture du script-->
+</head> <!-- Fermeture de la tête du document -->
+
+<body class="body_passion"> <!-- Classe CSS pour styliser spécifiquement la page des passions. -->
+    <header>
+        <nav>
+            <ul> <!-- Menu de navigation avec des liens vers les pages principales. -->
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../A propos de moi/A propos de moi.html" class="nav-link">A propos de moi</a></li>
+                <li><a href="../CV/cv.html">CV</a></li>
+                <li><a href="../diplômes, certifications et compétences/diplômes, certifications et compétences.html">Compétences
+                        & Certifications</a></li>
+                <li><a href="../Projets/projets.html">Projets</a></li>
+                <li><a href="../Veille Techologique/veille.html">Veille Technologique</a></li>
+                <li><a href="../Expériences professionnelles/experiences.html">Stages & Expériences</a></li>
+                <li><a href="../Passions/passions.html">Passions</a></li>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="colortexte"> <!-- Section contenant le contenu principal sur les passions. -->
+            <h2>Mes Passions</h2> <!-- Titre de la section. -->
+            <p>
+                Ma passion principale est la guitare et le chant. J'en fais depuis plusieurs années et j'ai eu
+                plusieurs
+                expériences en groupe et <span id="photo_scene"><b><u>scène</u></b></span>.
+                <!-- Lien interactif pour plus de détails. -->
+                <br><br> <!-- Saut de ligne pour espacer le texte. -->
+                Je suis actuellement dans deux groupes en tant que guitariste et chanteur, dans une école de musique
+                et
+                encadré par des professeurs, sympas, à l'écoute et avec beaucoup d'expérience en groupe.
+                Quand je joue avec <span id="guitare"><b><u>ma guitare</u></b></span>, je me sens libéré
+                et je ne
+                suis
+                plus le même. Ma timidité part et je deviens un guitariste qui aime montrer sa passion aux autres.
+                <!-- Texte sur la relation personnelle avec la guitare. -->
+                <br><br>
+                Mes inspirations de guitaristes connus, j'en ai beaucoup, mais certains m'ont particulièrement
+                marqué :
+                il y a par exemple <span id="frusciante"><b><u>John Frusciante</u></b></span>, grand guitariste des
+                Red
+                Hot Chili Peppers, son jeu unique et ses riffs de guitare immersifs m'entraînent dans la musique
+                pure et
+                ses sons de guitare, ses solos sont une grande inspiration pour moi.
+                <!-- Inspiration musicale avec John Frusciante. -->
+                <br><br>
+                Le deuxième guitariste m'inspirant dans la musique et la guitare, c'est -M-, ce grand artiste a
+                fait de
+                moi un guitariste qui se libère de toute sa timidité, comme lui. De nombreuses interviews de <span
+                    id="chedid"><b><u>Matthieu Chedid</u></b></span>, il disait qu'il était très timide, et quand il
+                est
+                sur
+                scène, il change complètement et sa timidité disparaît, et c'est pour cela que ce guitariste est une
+                grande inspiration pour moi, mais aussi son jeu de guitare, les paroles de ses chansons et ses solos
+                impressionnants en live, c'est pour moi un des plus grands guitaristes français.
+                <!-- Inspiration avec Matthieu Chedid. -->
+                <br><br>
+                Un autre virtuose de la guitare, connu pour ses sons et son groupe mythique dans les années 80, où on a
+                tous déjà
+                écouté ses chansons à la radio ou dans un bal, une fête... C'est bien évidemment <span
+                    id="bertignac"><b><u>Louis Bertignac</u></b></span>. Connu pour avoir été le guitariste de
+                Téléphone
+                dans les années 80, ce groupe a marqué une génération dans la musique pop/rock. Avec ses riffs de
+                guitare connus et ses solos emblématiques, Louis Bertignac est pour moi une inspiration dans le jeu
+                technique de la guitare, sa technique pour l'improvisation et sa créativité, sa puissance et son
+                énergie
+                sur scène. <!-- Inspiration avec Louis Bertignac. -->
+                <br><br>
+                Un autre joueur mythique de la guitare, qui a marqué l'histoire de la musique rock est <span
+                    id="page"><b><u>Jimmy
+                            Page</u></b></span>, le guitariste légendaire de Led Zeppelin. Ses riffs puissants et
+                ses
+                solos envoû
+                tants ont révolutionné le monde de la guitare. Jimmy Page est une véritable icône du rock, et sa
+                créativité et sa technique sont une source d'inspiration pour moi.
+                <!-- Inspiration avec Jimmy Page. -->
+                <br><br>
+                Enfin, <span id="gilmour"><b><u>David Gilmour</u></b></span>, le guitariste et chanteur de Pink
+                Floyd,
+                est une autre de mes grandes inspirations. Ses solos mélodiques et ses sons atmosphériques ont une
+                profondeur émotionnelle qui me touche particulièrement. Gilmour est un maître de la guitare, et son
+                influence se ressent dans mon propre jeu. <!-- Inspiration avec David Gilmour. -->
+
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Mon Portfolio</p> <!-- Pied de page avec les droits d'auteur. -->
+    </footer>
+</body>
+
+</html>
