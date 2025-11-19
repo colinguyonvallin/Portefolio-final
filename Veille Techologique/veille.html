@@ -1,104 +1,111 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!-- Spécifie que le document est en HTML et que la langue principale est le français -->
 
 <head>
     <meta charset="UTF-8">
-    <!-- Définit l'encodage des caractères comme UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Configure la mise en page pour s'adapter aux différents appareils et tailles d'écran -->
-    <title>Veille Technologique</title>
-    <!-- Définit le titre de la page affiché dans l'onglet du navigateur -->
+    <title>Veille Technologique - IA & Cybersécurité</title>
     <link rel="stylesheet" href="../styles/styles.css">
-    <!-- Lien vers le fichier CSS externe pour le style -->
 </head>
 
 <header>
     <nav>
-        <!-- Section de navigation pour les liens internes -->
         <ul>
             <li><a href="../index.html">Accueil</a></li>
-            <!-- Lien vers la page d'accueil -->
             <li><a href="../A propos de moi/A propos de moi.html" class="nav-link">A propos de moi</a></li>
-            <!-- Lien vers la page de présentation personnelle -->
             <li><a href="../CV/cv.html">CV</a></li>
-            <!-- Lien vers la page du CV -->
-            <li><a href="../diplômes, certifications et compétences/diplômes, certifications et compétences.html">Compétences
-                    & Certifications</a></li>
-            <!-- Lien vers la page des compétences et certifications -->
+            <li><a href="../diplômes, certifications et compétences/diplômes, certifications et compétences.html">Compétences & Certifications</a></li>
             <li><a href="../Projets/projets.html">Projets</a></li>
-            <!-- Lien vers la page des projets -->
             <li><a href="../Veille Techologique/veille.html">Veille Technologique</a></li>
-            <!-- Lien vers la page de veille technologique (actuelle) -->
             <li><a href="../Expériences professionnelles/experiences.html">Stages & Expériences</a></li>
-            <!-- Lien vers la page des expériences professionnelles -->
             <li><a href="../Passions/passions.html">Passions</a></li>
-            <!-- Lien vers la page des passions -->
         </ul>
     </nav>
 </header>
 
 <body>
- <main>
+    <main class="veille-page">
         <section>
-            <h2>Ma Veille Technologique : L'IA dans la Cybersécurité</h2>
+            <h2>Ma Veille Technologique</h2>
+            <h3 class="subtitle">Sujet : L'Intelligence Artificielle dans la Cybersécurité</h3>
+            
             <p>
-                Dans le cadre de mon BTS SIO, j'ai choisi de réaliser ma veille technologique sur un sujet au cœur des enjeux actuels : 
-                <strong>l'intégration de l'intelligence artificielle dans la cybersécurité</strong>. 
-                Ce domaine combine deux révolutions informatiques et transforme radicalement les méthodes de défense (détection prédictive, réponse automatisée) ainsi que les types de menaces.
+                Dans le cadre de mon BTS SIO, j'ai orienté ma veille technologique sur un sujet stratégique : 
+                <strong>l'intégration de l'IA dans la cybersécurité</strong>. Ce domaine en pleine mutation redéfinit 
+                les règles de la défense informatique (détection prédictive, réponse automatisée) tout en introduisant 
+                de nouveaux vecteurs d'attaques sophistiqués.
             </p>
 
-            <h3>1. Les outils de ma veille</h3>
-            <p>Pour mener à bien cette surveillance active et structurée, j'ai mis en place un écosystème de trois outils complémentaires :</p>
-            <ul>
-                <li><strong>Google Alerts :</strong> Pour une surveillance large du web et la réception de notifications par email.</li>
-                <li><strong>Feedly :</strong> Un agrégateur de flux RSS qui me permet de centraliser les publications de médias spécialisés dans une interface visuelle.</li>
-                <li><strong>Inoreader :</strong> Un outil plus avancé que j'utilise pour ses capacités de filtrage et d'automatisation (règles de tri).</li>
-            </ul>
+            <h3>1. Mon écosystème de veille</h3>
+            <p>Pour structurer ma surveillance, j'utilise trois outils complémentaires :</p>
+            
+            <div class="tools-container">
+                <div class="tool-card">
+                    <h4>Google Alerts</h4>
+                    <p>Surveillance large du web avec des alertes quotidiennes par email sur des mots-clés ciblés.</p>
+                    <img src="../images/google-alerts.jpg" alt="Interface Google Alerts">
+                </div>
+                
+                <div class="tool-card">
+                    <h4>Feedly</h4>
+                    <p>Agrégateur de flux RSS pour centraliser les articles de blogs spécialisés (<em>The Hacker News, DarkReading</em>).</p>
+                    <img src="../images/feedly.jpg" alt="Interface Feedly">
+                </div>
+                
+                <div class="tool-card">
+                    <h4>Inoreader</h4>
+                    <p>Outil avancé utilisé pour le filtrage automatique des articles via des règles de tri.</p>
+                    <img src="../images/inoreader.jpg" alt="Interface Inoreader">
+                </div>
+            </div>
 
             <h3>2. Configuration et Paramétrage</h3>
-            <p>La pertinence d'une veille repose sur son paramétrage. Voici comment j'ai configuré mes outils pour filtrer le "bruit" informationnel :</p>
-
-            <h4>Mots-clés surveillés (Google Alerts)</h4>
-            <p>J'ai configuré des alertes quotidiennes sur des termes précis, en français et en anglais, pour couvrir l'actualité internationale :</p>
-            <ul>
-                <li>"Intelligence artificielle cybersécurité"</li>
-                <li>"AI threat detection"</li>
-                <li>"Cyberattaque IA"</li>
-                <li>"Machine learning cyberdefense"</li>
+            <p>Pour garantir la pertinence de l'information, j'ai mis en place un filtrage précis :</p>
+            <ul class="custom-list">
+                <li><strong>Mots-clés surveillés (FR/EN) :</strong> "Intelligence artificielle cybersécurité", "AI threat detection", "Machine learning cyberdefense", "Cyberattaque IA".</li>
+                <li><strong>Règles d'automatisation :</strong> Tri automatique des contenus contenant "AI security" ou "Deep learning malware detection" vers des dossiers thématiques dédiés.</li>
             </ul>
 
-            <h4>Flux RSS et Dossiers (Feedly & Inoreader)</h4>
-            <p>
-                J'ai regroupé mes sources dans un dossier dédié "VT". Je suis notamment les flux de 
-                <em>The Hacker News</em>, <em>DarkReading</em>, <em>Le Monde Informatique</em> (section sécurité) et <em>ActuIA</em>.
-                Sur Inoreader, j'ai créé des règles pour classer automatiquement les articles contenant des termes comme "Al security" ou "Behavioral analysis" dans des dossiers spécifiques.
-            </p>
+            <h3>3. Analyse : Opportunités et Menaces</h3>
+            <div class="analysis-box">
+                <p>Ma veille a mis en lumière la dualité de l'IA dans ce secteur :</p>
+                <ul>
+                    <li><strong>Les Apports :</strong> Automatisation de la détection (Machine Learning), réponse instantanée aux incidents (SOAR), réduction des faux positifs.</li>
+                    <li><strong>Les Risques :</strong> Dépendance à la qualité des données, coûts élevés, et émergence d'attaques "adversariales" où les pirates utilisent l'IA pour tromper les défenses.</li>
+                </ul>
+            </div>
 
-            <h3>3. Méthodologie et Analyse</h3>
-            <p>
-                Ma méthode ne s'arrête pas à la collecte. Je pratique une sélection rigoureuse basée sur la <strong>fiabilité de la source</strong> et la <strong>pertinence technique</strong>. 
-                Je privilégie les articles détaillant des cas concrets ou des nouvelles technologies de défense plutôt que les contenus purement commerciaux.
-            </p>
-            <p>
-                Cette veille m'a permis de comprendre des concepts clés comme l'analyse comportementale par IA (pour détecter les menaces internes) et les risques liés aux attaques "adversariales" contre les modèles d'IA eux-mêmes.
-            </p>
+            <h3>4. Tendances actuelles (2024-2025)</h3>
+            <div class="trends-container">
+                <div class="trend-item">
+                    <strong>Analyse Comportementale</strong>
+                    Abandon des signatures statiques pour analyser le comportement utilisateur en temps réel.
+                </div>
+                <div class="trend-item">
+                    <strong>Automatisation (SOAR)</strong>
+                    Orchestration de la sécurité pour répondre aux menaces sans intervention humaine.
+                </div>
+                <div class="trend-item">
+                    <strong>IA Générative</strong>
+                    Utilisation croissante de l'IA pour générer des scénarios d'attaque ou de défense.
+                </div>
+            </div>
 
-            <p style="text-align: center; margin-top: 30px;">
-                <a href="../Documents/Guyon--Vallin Colin SIO2 - rapport Veille Technologique.pdf" target="_blank">
-                    <button>Consulter mon rapport de veille complet (PDF)</button>
+            <div class="download-section">
+                <a href="../Documents/Guyon--Vallin Colin SIO2 - rapport Veille Technologique.pdf" target="_blank" class="btn-download">
+                    📄 Consulter mon rapport complet (PDF)
                 </a>
-            </p>
+            </div>
+
         </section>
         
-        <p> </p>
-        <p> <img src="en construction.gif" alt="Site en construction"></p>
+        <div class="construction-gif">
+            <img src="en construction.gif" alt="Site en construction">
+        </div>
     </main>
+
     <footer class="veilletechonologique">
-        <!-- Pied de page -->
         <p>&copy; 2024 Mon Portfolio</p>
-        <!-- Indication de copyright pour l'année 2024 -->
     </footer>
 </body>
-
 </html>
