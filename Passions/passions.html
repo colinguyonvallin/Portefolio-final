@@ -126,7 +126,7 @@
         <section class="immersive-section section-strato">
             <div class="overlay"></div>
             <div class="content-box">
-                <img src="ma_guitare.jpg" alt="Ma Stratocaster" class="artist-img">
+                <img src="../images/ma_guitare.jpg" alt="Ma Stratocaster" class="artist-img">
                 <div class="text-content">
                     <h2>La Fidèle</h2>
                     <h3>Fender Stratocaster</h3>
@@ -168,5 +168,27 @@
         </section>
 
     </main>
+<script>
+        // On crée un "Observateur" qui surveille les sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Si la section est visible à l'écran
+                if (entry.isIntersecting) {
+                    // On ajoute la classe "visible" qui lance l'animation CSS
+                    entry.target.classList.add('visible');
+                } else {
+                    // Optionnel : Enlever la classe si on veut rejouer l'animation en remontant
+                    // entry.target.classList.remove('visible'); 
+                }
+            });
+        }, {
+            threshold: 0.3 // L'animation se lance quand 30% de la section est visible
+        });
+
+        // On demande à l'observateur de surveiller toutes les sections immersives
+        document.querySelectorAll('.immersive-section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
