@@ -1,1177 +1,381 @@
-/* styles.css */
+/* =========================================
+   1. IMPORTATIONS & CONFIGURATION DE BASE
+   ========================================= */
 
-/* Styles généraux*/
-html {
+/* Import de la police 'Montserrat' pour un look plus moderne (si tu veux l'utiliser) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
+
+/* Reset de base pour éviter les bugs d'affichage */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
     width: 100%;
     height: 100%;
+    /* C'est ICI la magie : on active l'aimant vertical (y) obligatoire (mandatory) */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; /* Pour que les clics sur le menu soient fluides aussi */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    /* Définit la police utilisée */
+    font-family: 'Montserrat', Arial, sans-serif; /* Police par défaut */
     line-height: 1.6;
-    /* Définit la hauteur de ligne */
-    margin: 0;
-    /* Enlève la marge par défaut */
-    padding: 0;
-    /* Enlève le padding par défaut */
-    background-color: #f9f9f9;
-    /* Définit la couleur de fond */
+    background-color: #E8EDF3; /* Fond gris clair pour les pages classiques */
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Permet de coller le footer en bas */
+    min-height: 100vh;
     font-size: 18px;
-    /* Définit la taille de la police */
-    background-color: #091c33;
-    margin-bottom: 100px;
 }
 
+/* =========================================
+   2. HEADER & NAVIGATION (Le Menu)
+   ========================================= */
+
 header {
-    background-color: #2365AD;
-    /* Définit la couleur de fond */
+    background-color: #2365AD; /* Ton Bleu Principal */
     color: #ffffff;
-    /* Définit la couleur du texte */
     padding: 1rem 0;
-    /* Ajoute du padding en haut et en bas */
     text-align: center;
-    /* Centre le texte */
+    position: sticky; /* Le menu reste accroché en haut quand on descend */
     top: 0;
-    /* Positionne en haut */
     width: 100%;
-    /* Prend toute la largeur */
-    z-index: 20;
-    /* Définit l'ordre de superposition */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav ul {
     list-style: none;
-    /* Enlève les puces des listes */
     padding: 0;
-    /* Enlève le padding par défaut */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Pour que le menu s'adapte sur mobile */
 }
 
 nav ul li {
+    margin: 0 15px;
     display: inline;
-    /* Affiche les éléments en ligne */
-    margin: 0 10px;
-    /* Ajoute une marge autour des éléments */
 }
 
 nav ul li a {
     color: #fff;
-    /* Définit la couleur du texte */
     text-decoration: none;
-    /* Enlève le soulignement */
-    transition: color 0.3s;
-    /* Ajoute une transition pour la couleur */
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #a78fff;
-    /* Change la couleur au survol */
+nav ul li a:hover,
+.nav-link:hover {
+    color: #a78fff; /* Couleur violette au survol */
 }
 
+/* =========================================
+   3. STRUCTURE PRINCIPALE (La boîte blanche)
+   ========================================= */
+
+/* C'est le conteneur principal pour tes pages classiques (Accueil, CV, etc.) */
 main {
-    padding: 20px;
-    /* Ajoute du padding autour du contenu principal */
-    top: 100px;
-    /* Définit la position */
     padding: 2rem;
-    text-align: left;
     background-color: #fff;
     margin: 2rem auto;
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 50px;
-    /* Ajoute une marge pour éviter le chevauchement */
-    min-height: 80vh;
-    /* Assure que le contenu occupe au moins 80% de la hauteur de la fenêtre */
-
+    width: 85%;
+    max-width: 1200px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    flex: 1; /* Pousse le footer vers le bas si la page est vide */
+    position: relative;
+    top: 0;
 }
 
+/* Animations d'apparition */
 section {
     margin-bottom: 20px;
-    /* Ajoute une marge en bas */
     opacity: 0;
-    /* Définit l'opacité initiale */
     animation: fadeIn 1s ease-in-out forwards;
-    /* Ajoute une animation de fondu */
-    margin-bottom: 100px;
-    /* Ajoute une marge supplémentaire en bas */
-    font-size: 18px;
-    /* Définit la taille de la police */
-
-}
-
-section h2 {
-    background-color: #2365AD;
-    /* Définit la couleur de fond */
-    color: #fff;
-    /* Définit la couleur du texte */
-    padding: 10px;
-    /* Ajoute du padding autour du texte */
-    border-radius: 5px;
-    /* Arrondit les coins */
-    transition: background-color 0.3s;
-    /* Ajoute une transition pour la couleur de fond */
-    margin-left: 10px;
-}
-
-section h2:hover {
-    background-color: #2365AD;
-    /* Change la couleur de fond au survol */
-}
-
-footer {
-    position: relative;
-    /* Positionne le footer en bas de la page */
-    bottom: 0;
-    /* Positionne en bas */
-    width: 100%;
-    /* Prend toute la largeur */
-    background-color: #2366ad;
-    /* Définit la couleur de fond */
-    text-align: center;
-    /* Centre le texte */
-    padding: 10px;
-    /* Ajoute du padding autour du texte */
-    z-index: 20;
-    /* Définit l'ordre de superposition */
-    /* position: fixed; */
-    /* Positionne le footer en bas de la page (répétition) */
-    bottom: 0;
-    /* Positionne en bas (répétition) */
-    width: 100%;
-    /* Prend toute la largeur (répétition) */
-    margin-bottom: -10px;
-    color: white;
-}
-
-footer.veilletechonologique {
-    position: relative;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        /* Définit l'opacité initiale */
-        transform: translateY(20px);
-        /* Déplace l'élément de 20px vers le bas */
-    }
-
-    to {
-        opacity: 1;
-        /* Définit l'opacité finale */
-        transform: translateY(0);
-        /* Remet l'élément à sa position initiale */
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Styles spécifiques pour la page des passions */
-#passions-page .highlight {
-    font-weight: bold;
-    /* Met le texte en gras */
-    text-decoration: underline;
-    /* Souligne le texte */
-    color: #4470ff;
-    /* Définit la couleur du texte */
+/* Titres H2 globaux */
+h2 {
+    color: #2365AD;
+    margin-top: 0;
 }
 
-#passions-page .hidden {
-    display: none;
-    /* Cache l'élément */
+/* On met la bordure bleue à gauche SAUF sur la page passions (classe full-width) */
+main:not(.full-width) h2 {
+     border-left: 5px solid #2365AD;
+     padding-left: 15px;
 }
 
-#passions-page .blurred-background {
-    filter: blur(5px);
-    /* Ajoute un effet de flou */
-    pointer-events: none;
-    /* Désactive les interactions avec l'élément */
-}
-
-#passions-page .popup {
-    position: fixed;
-    /* Positionne la popup de manière fixe */
-    top: 50%;
-    /* Centre verticalement */
-    left: 50%;
-    /* Centre horizontalement */
-    transform: translate(-50%, -50%);
-    /* Centre parfaitement l'élément */
-    width: 80%;
-    /* Définit la largeur à 80% du conteneur parent */
-    max-width: 14rem;
-    /* Définit la largeur maximale à 14 rem */
-    /* Taille maximale des images */
-    z-index: 1001;
-    /* Définit l'ordre de superposition pour être au-dessus des autres éléments */
-    background-color: #fff;
-    /* Définit la couleur de fond */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    /* Ajoute une ombre portée */
-    padding: 20px;
-    /* Ajoute du padding autour du contenu */
-    border-radius: 10px;
-    /* Arrondit les coins */
-    text-align: center;
-    /* Centre le texte */
-}
-
-#passions-page .popup img {
-    width: 100%;
-    /* Définit la largeur à 100% du conteneur parent */
-    height: 100%;
-    width: 100%;
-    /* Conserve les proportions de l'image */
-    /* Garde les proportions de l'image */
-}
-
-#passions-page .popup-text {
-    margin-top: 10px;
-    /* Ajoute une marge en haut */
-}
-
-#passions-page .close-popup {
-    position: absolute;
-    /* Positionne de manière absolue */
-    top: 10px;
-    /* Positionne à 10px du haut */
-    right: 10px;
-    /* Positionne à 10px de la droite */
+/* Style spécifique pour les H2 "boutons" (anciens styles) */
+section h2.btn-style {
     background-color: #2365AD;
-    /* Définit la couleur de fond */
     color: #fff;
-    /* Définit la couleur du texte */
-    border: none;
-    /* Enlève les bordures */
-    padding: 5px 10px;
-    /* Ajoute du padding autour du texte */
-    cursor: pointer;
-    /* Change le curseur au survol */
+    padding: 10px;
     border-radius: 5px;
-    /* Arrondit les coins */
+    transition: background-color 0.3s;
+    margin-left: 10px;
+    border-left: none;
 }
 
-#passions-page .close-popup:hover {
-    background-color: #2365AD;
-    /* Change la couleur de fond au survol */
+section h2.btn-style:hover {
+    background-color: #1a4e82;
 }
 
-.colortexte {
-    color: black;
-    /* Définit la couleur du texte */
-    padding-bottom: revert;
+a {
+    color: #2365AD;
+    text-decoration: none;
 }
 
+/* =========================================
+   4. PIED DE PAGE (Footer)
+   ========================================= */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Styles spécifiques pour la page des projets */
-.projects {
-    padding: 20px;
-    /* Ajoute du padding autour des projets */
-    margin-bottom: 100px;
-}
-
-.project {
-    margin-bottom: 30px;
-    /* Ajoute une marge en bas des projets */
+footer {
+    background-color: #2366AD;
+    color: white;
+    text-align: center;
     padding: 15px;
-    /* Ajoute du padding autour de chaque projet */
-    border-radius: 10px;
-    /* Arrondit les coins des projets */
-    background-color: #f0f8ff;
-    /* Définit la couleur de fond des projets */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Ajoute une ombre discrète */
-    transition: transform 0.3s, background-color 0.3s;
-    /* Ajoute des transitions pour la transformation et la couleur de fond */
+    margin-top: auto;
+    width: 100%;
+    z-index: 20;
 }
 
-.project:hover {
-    transform: translateY(-10px);
-    /* Déplace l'élément de 10px vers le haut au survol */
-    background-color: #e6f7ff;
-    /* Change la couleur de fond au survol */
+/* =========================================
+   5. PAGE : PROJETS (La Grille)
+   ========================================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
 }
 
-.project h3 {
-    color: #a28aff;
-    /* Définit la couleur du titre des projets */
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
 }
 
-.project p {
-    color: #333;
-    /* Définit la couleur des paragraphes des projets */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 4px solid #2365AD;
+    background-color: #ddd;
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 {
+    margin-top: 0;
+    color: #2365AD;
+}
+
+.short-desc {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
 .project-details {
     display: none;
-    /* Cache les détails des projets */
-    animation: fadeIn 1s forwards;
-    /* Ajoute une animation de fondu */
-    max-height: 300px;
-    /* Limite la hauteur pour activer le défilement */
-    overflow-y: auto;
-    /* Ajoute une barre de défilement si le contenu dépasse */
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+    background-color: #f9fcfd;
     padding: 10px;
-    /* Ajoute du padding autour des détails */
-    background-color: #f9f9f9;
-    /* Définit la couleur de fond des détails */
-    border: 1px solid #ddd;
-    /* Ajoute une bordure */
     border-radius: 5px;
-    /* Arrondit les coins */
+    animation: fadeIn 0.5s;
 }
 
 .show-details .project-details {
     display: block;
-    /* Affiche les détails des projets */
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        /* Définit l'opacité initiale */
-        transform: translateY(20px);
-        /* Déplace l'élément de 20px vers le bas */
-    }
-
-    to {
-        opacity: 1;
-        /* Définit l'opacité finale */
-        transform: translateY(0);
-        /* Remet l'élément à sa position initiale */
-    }
 }
 
 button {
-    background-color: #a28aff;
-    /* Définit la couleur de fond des boutons */
-    color: #ffffff;
-    /* Définit la couleur du texte des boutons */
+    background-color: #2365AD;
+    color: white;
     border: none;
-    /* Enlève les bordures des boutons */
     padding: 10px 20px;
-    /* Ajoute du padding autour des boutons */
-    border-radius: 5px;
-    /* Arrondit les coins des boutons */
+    border-radius: 6px;
     cursor: pointer;
-    /* Change le curseur au survol */
+    margin-top: auto;
     transition: background-color 0.3s;
-    /* Ajoute une transition pour la couleur de fond */
 }
 
 button:hover {
-    background-color: #a28aff;
-    /* Change la couleur de fond au survol */
+    background-color: #1a4e82;
 }
 
-footer.spécifieprojets {
-    position: relative;
-    /* Positionne le footer de manière relative */
-    bottom: 0;
-    /* Positionne en bas */
-    width: 100%;
-    /* Prend toute la largeur */
-    background-color: #2365AD;
-    /* Définit la couleur de fond */
-    text-align: center;
-    /* Centre le texte */
-    padding: 10px;
-    /* Ajoute du padding autour du texte */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* spécification style page cv.html */
+/* =========================================
+   6. PAGE : CV & DIPLÔMES
+   ========================================= */
 
 .modal-content {
     margin: auto;
-    /* Centre l'élément horizontalement */
     display: block;
-    /* Affiche l'élément en tant que bloc */
     width: 80%;
-    /* Définit la largeur à 80% du conteneur parent */
     max-width: 700px;
-    /* Définit la largeur maximale à 700 pixels */
     transition: transform 0.25s ease;
-    /* Ajoute une transition douce pour la transformation */
 }
 
 .modal-content:hover {
     transform: scale(1.1);
-    /* Agrandit l'élément au survol */
-}
-
-@-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(0);
-        /* Début de l'animation avec une échelle de 0 */
-    }
-
-    to {
-        -webkit-transform: scale(1);
-        /* Fin de l'animation avec une échelle de 1 */
-    }
-}
-
-@keyframes zoom {
-    from {
-        transform: scale(0.1);
-        /* Début de l'animation avec une échelle de 0.1 */
-    }
-
-    to {
-        transform: scale(1);
-        /* Fin de l'animation avec une échelle de 1 */
-    }
 }
 
 a.presentation {
     background-color: #2365AD;
     color: #ffffff;
     justify-content: center;
-    display: flex;
-    /* Utilise le modèle flexbox pour centrer les éléments */
-    justify-content: center;
-    /* Centre les éléments horizontalement */
-    list-style: none;
-    /* Supprime les puces des listes */
-    padding: 0;
-    /* Supprime le padding par défaut des listes */
+    display: inline-flex;
+    padding: 10px 20px;
     outline: none;
     text-decoration: none;
-    display: inline-block;
-    width: 19.5%;
+    border-radius: 5px;
     margin-right: 0.625%;
     text-align: center;
-    line-height: 3;
-
-}
-
-.close {
-    position: absolute;
-    /* Positionne l'élément de manière absolue */
-    top: 15px;
-    /* Positionne à 15px du haut */
-    right: 35px;
-    /* Positionne à 35px de la droite */
-    color: #f1f1f1;
-    /* Définit la couleur du texte */
-    font-size: 40px;
-    /* Définit la taille de la police */
-    font-weight: bold;
-    /* Met le texte en gras */
-    transition: 0.3s;
-    /* Ajoute une transition */
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    /* Change la couleur du texte au survol ou au focus */
-    text-decoration: none;
-    /* Enlève la décoration du texte */
-    cursor: pointer;
-    /* Change le curseur au survol */
-}
-
-.buttons {
-    display: flex;
-    /* Utilise Flexbox pour aligner les éléments */
-    justify-content: center;
-    /* Centre les éléments horizontalement */
-    margin-top: 10px;
-    /* Ajoute une marge en haut */
-}
-
-.btn {
-    padding: 10px 20px;
-    /* Ajoute du padding autour du bouton */
-    font-size: 16px;
-    /* Définit la taille de la police */
-    font-weight: bold;
-    /* Met le texte en gras */
-    color: #fff;
-    /* Définit la couleur du texte */
-    background-color: #00f2fe;
-    /* Définit la couleur de fond */
-    border: none;
-    /* Enlève les bordures */
-    border-radius: 5px;
-    /* Arrondit les coins */
-    cursor: pointer;
-    /* Change le curseur au survol */
-    text-decoration: none;
-    /* Enlève la décoration du texte */
-    opacity: 0.8;
-    /* Définit l'opacité */
-    margin: 0 10px;
-    /* Ajoute une marge horizontale de 10px */
-}
-
-.btn:hover {
-    background-color: #4facfe;
-    /* Change la couleur de fond au survol */
-    opacity: 1;
-    /* Réinitialise l'opacité */
-}
-
-.img-container {
-    position: relative;
-    /* Positionne l'élément de manière relative */
-    display: inline-block;
-    /* Affiche l'élément en ligne */
-    margin-top: 20px;
-    /* Ajoute une marge en haut */
-}
-
-.img-container img {
-    width: 100%;
-    /* Définit la largeur à 100% du conteneur parent */
-    height: auto;
-    /* Conserve les proportions de l'image */
-}
-
-.img-buttons {
-    position: absolute;
-    /* Positionne l'élément de manière absolue */
-    top: 10px;
-    /* Positionne à 10px du haut */
-    right: 10px;
-    /* Positionne à 10px de la droite */
-    display: flex;
-    /* Utilise Flexbox pour aligner les éléments */
-    gap: 10px;
-    /* Ajoute un espace de 10px entre les éléments */
+    width: auto;
 }
 
 .presentation {
     text-align: left;
-    /* Aligne le texte à gauche */
-    margin-left: 30px;
-    /* Ajoute une marge à gauche */
+    margin-left: 0;
     padding: 2rem;
-    text-align: left;
     background-color: #fff;
     margin: 2rem auto;
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-decoration: none;
-    color: #000000;
-    margin-bottom: 100px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*style spécifique a la page diplome et certifications*/
-
-/* Styles pour le contenu principal */
-.main-content {
-    padding: 20px;
-    /* Ajoute un espace intérieur autour du contenu principal */
-    background: #fff;
-    /* Définit un fond blanc pour le contenu principal */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Ajoute une ombre légère autour de la section principale */
     width: 100%;
-    /* Définit la largeur à 100% du conteneur */
-    max-width: 1000px;
-    /* Limite la largeur maximale à 1000px */
-    animation: fadeIn 2s ease-in-out;
-    /* Applique une animation d'apparition */
-    padding: 100px;
-    /* Espace intérieur supplémentaire */
-    margin: 100px;
-    /* Espace extérieur supplémentaire autour de la section */
+    box-shadow: none;
+    border-radius: 8px;
+    color: #000;
 }
 
-/* Styles pour les titres */
 .main-title {
     border-bottom: 2px solid #4CAF50;
-    /* Ajoute une bordure verte sous les titres */
     padding-bottom: 10px;
-    /* Ajoute un espace sous le texte du titre */
-    animation: slideIn 1s ease-in-out;
-    /* Ajoute une animation de glissement pour le titre */
+    border-left: none;
 }
 
-/* Styles pour les listes */
 .no-bullets {
     list-style: none;
-    /* Supprime les puces des listes */
     padding: 0;
-    /* Supprime le padding par défaut des listes */
 }
 
-/* Styles pour centrer les listes */
 .centrerLi {
     display: flex;
-    /* Utilise le modèle flexbox pour centrer les éléments */
     justify-content: center;
-    /* Centre les éléments horizontalement */
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-/* Styles pour les éléments en gras dans les listes */
 .no-bullets li b {
     background: #f4f4f9;
-    /* Définit la couleur de fond des éléments mis en gras */
-    margin: 5px 0;
-    /* Ajoute un espacement vertical autour des éléments */
     padding: 10px;
-    /* Ajoute un espace intérieur */
     border-radius: 5px;
-    /* Arrondit les coins des éléments */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Ajoute une ombre légère */
-    transition: background-color 0.3s, transform 0.3s;
-    /* Définit des transitions pour les effets au survol */
-    animation: fadeIn 2s ease-in-out;
-    /* Applique une animation d'apparition */
+    display: inline-block;
 }
 
-/* Styles pour les éléments survolés */
 .test:hover {
     transform: scale(1.05);
-    /* Agrandit légèrement l'élément au survol */
-
+    transition: transform 0.3s;
 }
 
 a.specifieliens {
     background-color: #2365AD;
     color: #ffffff;
-    justify-content: center;
-    display: flex;
-    /* Utilise le modèle flexbox pour centrer les éléments */
-    justify-content: center;
-    /* Centre les éléments horizontalement */
-    list-style: none;
-    /* Supprime les puces des listes */
-    padding: 0;
-    /* Supprime le padding par défaut des listes */
-    outline: none;
-    text-decoration: none;
     display: inline-block;
-    margin-right: 0.625%;
-    text-align: center;
-    line-height: 3;
-}
-
-/* Styles pour le pied de page */
-.footer {
-    background: #2365AD;
-    /* Définit la couleur de fond du pied de page */
-    color: white;
-    /* Définit la couleur du texte dans le pied de page */
-    text-align: center;
-    /* Centre le texte horizontalement */
-    padding: 10px 0;
-    /* Ajoute un espace intérieur vertical */
-    position: relative;
-    /* Fixe le pied de page en bas de l'écran */
-    width: 100%;
-    /* Définit la largeur à 100% pour couvrir tout l'écran */
-    bottom: 0;
-    /* Positionne le pied de page en bas */
-}
-
-/* Animation de fadeIn */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        /* Départ avec une opacité de 0 (invisible) */
-        transform: translateY(20px);
-        /* Départ légèrement décalé vers le bas */
-    }
-
-    to {
-        opacity: 1;
-        /* Arrivée avec une opacité de 1 (visible) */
-        transform: translateY(0);
-        /* Position finale alignée avec le reste */
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/*style spécifique a la page experience*/
-
-
-
-.experience {
-    margin-bottom: 100px;
-}
-
-.experience h3 {
-    margin: 10px 0;
-    font-size: 30px;
-    /* Taille de texte augmentée */
-    color: #a28aff;
-}
-
-.experience p {
-    text-align: justify;
-    font-size: 18px;
-    /* Taille de texte augmentée */
-    padding-bottom: revert;
-}
-
-.experience .details {
-    font-style: italic;
-    color: #666;
-    font-size: 25px;
-    /* Taille de texte augmentée */
-
-}
-
-.main-experience {
-    padding-bottom: revert;
-    margin-bottom: 0px;
-    min-height: 80vh;
-    /* Assure que le contenu occupe au moins 80% de la hauteur de la fenêtre */
-    margin-bottom: 50px;
-    /* Ajoute une marge pour éviter le chevauchement */
-
-
-}
-
-/* Animation */
-.fade-in {
-    animation: fadeIn 2s;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-
-
-
-
-
-
-/* Styles globaux */
-html {
-    width: 100%;
-    height: 100%;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #E8EDF3;
-    font-size: 18px;
-    margin-bottom: 100px;
-}
-
-header {
-    background-color: #2365AD;
-    color: #ffffff;
-    padding: 1rem 0;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    z-index: 20;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
+    padding: 10px 20px;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-nav ul li a:hover {
-    color: #a78fff;
-}
-
-main {
-    padding: 20px;
-    top: 100px;
-    padding: 2rem;
-    text-align: left;
-    background-color: #fff;
-    margin: 2rem auto;
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-bottom: 50px;
-    min-height: 80vh;
-}
-
-/* Section animation */
-section {
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeIn 1s ease-in-out forwards;
-    font-size: 18px;
-}
-
-section h2 {
-    background-color: #2365AD;
-    color: #fff;
-    padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
-    margin-left: 10px;
-}
-
-section h2:hover {
-    background-color: #1a4e82;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Footer */
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    background-color: #2366AD;
-    text-align: center;
-    padding: 10px;
-    z-index: 20;
-    margin-bottom: -10px;
-    color: white;
-}
-
-footer.index {
-    position: fixed;
-}
-
-footer.veilletechonologique {
-    position: relative;
-}
-
-/* Styles pour la page index */
-.navbar {
-    background-color: #2365AD;
-    color: #fff;
-    padding: 1rem 0;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-list li {
-    margin: 0 15px;
-}
-
-.nav-link {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-link:hover {
-    color: #a78fff;
-}
-
-.welcome-text {
-    margin-bottom: 1.5rem;
-}
-
-footer.index {
-    position: fixed;
-}
-
-/* Styles pour la page passions */
-#passions-page .highlight {
-    font-weight: bold;
-    text-decoration: underline;
-    color: #4470ff;
-}
-
-#passions-page .hidden {
-    display: none;
-}
-
-#passions-page .blurred-background {
-    filter: blur(5px);
-    pointer-events: none;
-}
-
-#passions-page .popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 14rem;
-    z-index: 1001;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    margin: 5px;
     text-align: center;
 }
-
-#passions-page .popup img {
-    width: 100%;
-    height: auto;
-}
-
-#passions-page .popup-text {
-    margin-top: 10px;
-}
-
-#passions-page .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #2365AD;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#passions-page .close-popup:hover {
-    background-color: #1a4e82;
-}
-
-/* Styles pour la page projets */
-.projects {
-    padding: 20px;
-    margin-bottom: 100px;
-}
-
-.project {
-    margin-bottom: 30px;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: #f0f8ff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s;
-}
-
-.project:hover {
-    transform: translateY(-10px);
-    background-color: #e6f7ff;
-}
-
-.project h3 {
-    color: #a28aff;
-}
-
-.project-details {
-    display: none;
-    animation: fadeIn 1s forwards;
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.show-details .project-details {
-    display: block;
-}
-
-/* Styles spécifiques pour la page CV */
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    transition: transform 0.25s ease;
-}
-
-.modal-content:hover {
-    transform: scale(1.1);
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.close:hover,
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Styles pour la page Diplômes et Certifications */
-.main-content {
-    padding: 100px;
-    margin: 100px;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Styles pour la page Expériences */
-.experience {
-    margin-bottom: 100px;
-}
-
-.experience h3 {
-    margin: 10px 0;
-    font-size: 30px;
-    color: #a28aff;
-}
-
-.experience p {
-    text-align: justify;
-    font-size: 18px;
-    padding-bottom: revert;
-}
-
-.experience .details {
-    font-style: italic;
-    color: #666;
-    font-size: 25px;
-}
-
-.main-experience {
-    padding-bottom: revert;
-    margin-bottom: 50px;
-    min-height: 80vh;
-}
-
-/* Images avec effet de zoom */
-.img-container img {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.img-container img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
 
 /* =========================================
-   STYLES SPECIFIQUES VEILLE TECHNOLOGIQUE
+   7. PAGE : EXPÉRIENCES
    ========================================= */
 
-/* Sous-titre de la page */
+.experience {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid #2365AD;
+}
+
+.experience h3 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: #a28aff;
+}
+
+.experience .details {
+    font-style: italic;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* =========================================
+   8. PAGE : VEILLE TECHNOLOGIQUE
+   ========================================= */
+
 .subtitle {
-    color: #2365AD; /* Votre bleu principal */
+    color: #2365AD;
     font-weight: normal;
     margin-bottom: 30px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
 }
 
-/* Conteneur des cartes Outils (Flexbox) */
 .tools-container {
     display: flex;
-    flex-wrap: wrap; /* Permet aux cartes de passer à la ligne sur petit écran */
+    flex-wrap: wrap;
     gap: 20px;
     margin-bottom: 40px;
 }
 
-/* Carte individuelle Outil */
 .tool-card {
     flex: 1;
-    min-width: 280px; /* Largeur minimale avant de passer à la ligne */
+    min-width: 280px;
     background-color: #fff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Ombre légère */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    border-top: 4px solid #a28aff; /* Touche de violet en haut */
+    border-top: 4px solid #a28aff;
 }
 
 .tool-card:hover {
-    transform: translateY(-5px); /* Petit effet de soulèvement au survol */
+    transform: translateY(-5px);
 }
 
 .tool-card h4 {
@@ -1187,7 +391,6 @@ footer.index {
     border: 1px solid #eee;
 }
 
-/* Liste personnalisée */
 .custom-list {
     list-style-type: none;
     padding-left: 0;
@@ -1199,16 +402,14 @@ footer.index {
     border-left: 3px solid #2365AD;
 }
 
-/* Boîte d'Analyse */
 .analysis-box {
-    background-color: #f0f8ff; /* Bleu très pâle */
+    background-color: #f0f8ff;
     border-left: 5px solid #2365AD;
     padding: 20px;
     border-radius: 0 8px 8px 0;
     margin-bottom: 30px;
 }
 
-/* Conteneur des Tendances */
 .trends-container {
     display: flex;
     flex-wrap: wrap;
@@ -1216,7 +417,6 @@ footer.index {
     margin-bottom: 40px;
 }
 
-/* Item de Tendance */
 .trend-item {
     flex: 1;
     min-width: 250px;
@@ -1224,7 +424,7 @@ footer.index {
     padding: 15px;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    border-left: 5px solid #a28aff; /* Bordure violette */
+    border-left: 5px solid #a28aff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
@@ -1235,7 +435,6 @@ footer.index {
     font-size: 1.1em;
 }
 
-/* Bouton de téléchargement */
 .download-section {
     text-align: center;
     margin: 50px 0;
@@ -1246,7 +445,7 @@ footer.index {
     color: white;
     padding: 15px 30px;
     text-decoration: none;
-    border-radius: 50px; /* Bouton arrondi */
+    border-radius: 50px;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.2s;
     display: inline-block;
@@ -1259,8 +458,201 @@ footer.index {
     transform: scale(1.05);
 }
 
-/* Centrage du GIF */
 .construction-gif {
     text-align: center;
     margin-top: 40px;
+}
+
+/* =========================================
+   9. PAGE : PASSIONS (NOUVEAU STYLE IMMERSIF)
+   ========================================= */
+
+/* --- OVERRIDES (On change les règles de base juste pour cette page) --- */
+
+/* 1. On annule la "Boîte blanche" du main habituel */
+main.full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+/* 2. Fond noir spécial pour l'ambiance concert */
+.body_passion_immersive {
+    background-color: #000;
+}
+
+/* --- STRUCTURE PARALLAX --- */
+
+.immersive-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    /* Magie du Parallax */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    /* NOUVELLE LIGNE : L'aimant va s'accrocher au début (start) de la section */
+    scroll-snap-align: start;
+    scroll-snap-stop: always; /* Force l'arrêt sur chaque section (on ne peut pas en sauter 3 d'un coup) */
+}
+
+/* Le filtre noir par-dessus l'image pour que le texte soit lisible */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65); /* Assombrit le fond */
+    z-index: 1;
+}
+
+/* --- CONTENU DES SECTIONS --- */
+
+.content-box {
+    position: relative;
+    z-index: 2; /* Au-dessus de l'overlay */
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    
+    /* Effet "Verre Fumé" */
+    background: rgba(0, 0, 0, 0.7) !important; /* Fond noir un peu plus foncé */
+    backdrop-filter: blur(15px); /* Flou d'arrière plan */
+    padding: 60px !important;
+    border-radius: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure fine blanche */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Grosse ombre pour le relief */
+    
+    width: 80%;
+    max-width: 1100px;
+    color: white;
+}
+
+/* Inverse l'ordre image/texte (texte à droite, image à gauche, ou l'inverse) */
+.reverse-layout {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Images Artistes (Rondes) */
+.artist-img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.9);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    transition: transform 0.5s ease;
+}
+
+.artist-img:hover {
+    transform: scale(1.05) rotate(3deg); /* Petit effet sympa au survol */
+}
+
+/* Typographie Spéciale Passions */
+.immersive-section h2 {
+    color: #fff !important;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    font-size: 3.5rem !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+    margin-bottom: 10px !important;
+    line-height: 1.1;
+}
+
+.immersive-section h3 {
+    color: #ffd700 !important; /* Or */
+    font-size: 1.8rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.immersive-section p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #ddd;
+    line-height: 1.7;
+    margin-top: 20px;
+}
+
+/* --- IMAGES DE FOND (Les placeholders) --- */
+/* Remplace ces URL par tes vrais fichiers une fois téléchargés */
+.section-me { background-image: url('../images/bg_scene.jpg'); background-color: #222; }
+.section-rhcp { background-image: url('../images/bg_rhcp.jpg'); background-color: #ff4500; }
+.section-floyd { background-image: url('../images/bg_pinkfloyd.jpg'); background-color: #1a1a2e; }
+.section-ledzep { background-image: url('../images/bg_ledzep.jpg'); background-color: #d4af37; }
+
+/* --- OVERRIDES (On force le plein écran) --- */
+
+/* On cible le MAIN soit par sa classe, soit parce qu'il est dans la page passion */
+main.full-width, 
+body.body_passion_immersive main {
+    width: 100% !important;        /* Largeur totale */
+    max-width: 100% !important;    /* Pas de limite max */
+    margin: 0 !important;          /* Pas de marges blanches sur les côtés */
+    padding: 0 !important;         /* Pas d'espace intérieur */
+    background: transparent !important; /* Pas de fond blanc */
+    box-shadow: none !important;   /* Pas d'ombre */
+    border-radius: 0 !important;   /* Pas de coins arrondis */
+}
+
+
+
+
+
+
+/* =========================================
+   10. RESPONSIVE (Mobiles)
+   ========================================= */
+
+@media (max-width: 768px) {
+    /* Menu empilé verticalement */
+    nav ul {
+        flex-direction: column;
+    }
+    
+    /* Structure principale s'adapte */
+    main {
+        width: 95%;
+        padding: 1rem;
+    }
+
+    /* Passions : On empile tout verticalement sur petit écran */
+    .content-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px !important;
+        width: 95%;
+    }
+    
+    .reverse-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .artist-img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    
+    .immersive-section h2 {
+        font-size: 2.5rem !important;
+    }
 }

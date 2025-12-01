@@ -1,212 +1,120 @@
 <!DOCTYPE html>
-<html lang="fr"> <!-- Définit le type de document comme HTML5 et la langue principale comme français. -->
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8"> <!-- Définit l'encodage de caractères en UTF-8 pour supporter les caractères spéciaux. -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Rend la page responsive sur tous les appareils. -->
-    <title>Mes Projets</title> <!-- Titre affiché dans l'onglet du navigateur. -->
-    <link rel="stylesheet" href="../styles/styles.css"> <!-- Lien vers la feuille de styles externe. -->
+    <title>Mes Projets - Colin Guyon Vallin</title>
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
-<body> <!-- Début du corps du document. -->
-    <header> <!-- En-tête contenant la barre de navigation. -->
+<body>
+    <header>
         <nav>
-            <ul> <!-- Liste des liens de navigation. -->
-                <li><a href="../index.html">Accueil</a></li> <!-- Lien vers la page d'accueil. -->
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
                 <li><a href="../A propos de moi/A propos de moi.html" class="nav-link">A propos de moi</a></li>
-                <li><a href="../CV/cv.html">CV</a></li> <!-- Lien vers la page CV. -->
-                <li><a href="../diplômes, certifications et compétences/diplômes, certifications et compétences.html">Compétences
-                        & Certifications</a></li>
-                <!-- Lien vers les compétences et certifications. -->
-                <li><a href="../Projets/projets.html">Projets</a></li> <!-- Lien vers la page des projets. -->
+                <li><a href="../CV/cv.html">CV</a></li>
+                <li><a href="../diplômes, certifications et compétences/diplômes, certifications et compétences.html">Compétences & Certifications</a></li>
+                <li><a href="../Projets/projets.html">Projets</a></li>
                 <li><a href="../Veille Techologique/veille.html">Veille Technologique</a></li>
-                <!-- Lien vers la veille technologique. -->
                 <li><a href="../Expériences professionnelles/experiences.html">Stages & Expériences</a></li>
-                <!-- Lien vers les expériences professionnelles. -->
-                <li><a href="../Passions/passions.html">Passions</a></li> <!-- Lien vers la page des passions. -->
-                </li>
-                <!-- Lien vers la présentation personnelle. -->
+                <li><a href="../Passions/passions.html">Passions</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="projects"> <!-- Section principale contenant les projets. -->
-        <section>
-            <h2>Mes Projets</h2>
-        </section><!-- Titre de la section principale. -->
-
-        <section class="project show-details"> <!-- Section pour le premier projet. -->
-            <h3>Création de mon Portfolio</h3> <!-- Titre du projet. -->
-            <p>Ce projet consistait à créer mon propre portfolio en ligne afin de présenter mes compétences, mes
-                expériences et mes projets.</p> <!-- Description succincte du projet. -->
-            <button onclick="toggleDetails(this)">Détails</button>
-            <!-- Bouton pour afficher ou masquer les détails du projet. -->
-            <div class="project-details"> <!-- Conteneur pour les détails du projet. -->
-                <p>
-                    La création de mon portfolio en ligne a été un projet particulièrement enrichissant, à la fois sur
-                    le plan personnel et technique. J'ai commencé par conceptualiser
-                    la structure du site en dessinant des maquettes. Cela m'a permis d'organiser mes idées et d'avoir
-                    une vision claire de ce que je voulais atteindre. Cette étape a
-                    également été cruciale pour définir une identité visuelle cohérente : choix des couleurs,
-                    typographies et style général.
-                    <br><br>
-                    Une fois les bases définies, je suis passé à la partie technique en utilisant principalement HTML et
-                    CSS pour construire le squelette et le design du site.
-                    J'ai intégré des fonctionnalités interactives comme des animations et des transitions grâce à
-                    JavaScript en m'aidant de diverses outils, vidéos explicatives, sites internets expliquant les bases
-                    de JavaScript et aussi de l'IA pour m'aider à corriger et à m'apprendre les bases des animations
-                    JavaScript.
-                    <br><br>
-                    En parallèle, j'ai utilisé Git pour gérer les différentes versions de mon projet. Cela m'a permis de
-                    documenter chaque étape du développement et de pouvoir revenir
-                    en arrière si nécessaire.
-                    <br><br>
-                    Ce projet m'a offert l'opportunité de découvrir les subtilités du web design et du développement.
-                    J'ai pu expérimenter et tester de nombreuses techniques
-                    tout en renforçant mes compétences en résolution de problèmes. Aujourd'hui, mon portfolio est un
-                    outil indispensable pour présenter mes compétences lors d'entretiens
-                    ou à de potentiels recruteurs.
-                </p>
-            </div>
+    <main class="projects-page">
+        <section class="intro-section">
+            <h2>Mes Projets Réalisés</h2>
+            <p>Voici un aperçu de mes réalisations techniques et académiques.</p>
         </section>
 
-        <section class="project"> <!-- Section pour le deuxième projet. -->
-            <h3>Montage de mon PC Fixe Gamer</h3> <!-- Titre du projet. -->
-            <p>Ce projet impliquait l'assemblage de mon propre PC fixe destiné au gaming.</p>
-            <!-- Description succincte du projet. -->
-            <button onclick="toggleDetails(this)">Détails</button>
-            <!-- Bouton pour afficher ou masquer les détails du projet. -->
-            <div class="project-details"> <!-- Conteneur pour les détails du projet. -->
-                <p>
-                    Le montage de mon PC fixe gamer a été un projet particulièrement excitant, combinant mes
-                    connaissances en hardware et ma passion pour les jeux vidéo. Avant de commencer,
-                    j'ai mené une recherche approfondie pour sélectionner les composants qui correspondraient à mes
-                    besoins et à mon budget. Cette phase a été essentielle car elle m'a
-                    permis de comparer les performances des différents processeurs, cartes graphiques et autres éléments
-                    techniques.
-                    <br><br>
-                    Une fois tous les composants commandés et reçus, le processus de montage a commencé. J'ai
-                    soigneusement assemblé chaque pièce, de la carte mère au processeur en passant
-                    par l'installation des barrettes de RAM et du système de refroidissement. L'un des défis a été de
-                    m'assurer que tout était correctement câblé et que la gestion des câbles
-                    dans le boîtier était propre et efficace pour garantir un bon flux d'air.
-                    <br><br>
-                    Après l'assemblage, j'ai installé le système d'exploitation ainsi que les pilotes nécessaires pour
-                    chaque composant. Cette étape m'a confronté à plusieurs problèmes,
-                    notamment des pilotes incompatibles et des erreurs de configuration dans le BIOS. Grâce à de
-                    nombreuses recherches en ligne et à l'aide de forums spécialisés, j'ai pu
-                    résoudre ces problèmes.
-                    <br><br>
-                    Enfin, j'ai réalisé plusieurs tests de performance en jouant à des jeux plus ou moins exigeants en
-                    terme de performances et j'ai effectué les test en 2k. Ces tests m'ont permis de confirmer
-                    que le PC répondait parfaitement à mes attentes. En plus de m'offrir une machine puissante pour le
-                    gaming, ce projet m'a donné une précieuse expérience pratique en
-                    hardware et en résolution de problèmes techniques.
-                </p>
-            </div> <!-- Fin du conteneur des détails du projet -->
-        </section>
+        <div class="projects-grid">
 
-        <section class="project"> <!-- Début de la section de projet -->
-            <h3>Futur projet professionnel après BTS SIO</h3> <!-- Titre du futur projet professionnel -->
-            <p>Mon projet professionnel futur consiste à poursuivre mes études en Licence Informatique après
-                l'obtention
-                de mon BTS SIO.</p> <!-- Bref aperçu du projet professionnel futur -->
-            <button onclick="toggleDetails(this)">Détails</button>
-            <!-- Bouton pour afficher ou masquer les détails du projet -->
-            <div class="project-details"> <!-- Conteneur pour les détails du futur projet professionnel -->
-                <p>
-                    Mon projet professionnel après l'obtention de mon BTS Services Informatiques aux Organisations
-                    (SIO)
-                    est de poursuivre mes études en Licence Informatique.
-                    Ce choix est motivé par mon désir de me spécialiser dans des domaines en pleine expansion tels
-                    que
-                    la maintenance des réseaux informatiques, l'aide et le support aux utilisateurs, et pourquoi pas
-                    un
-                    jour ouvrir ma propre entreprise informatique en vente, conseil, diagnostics, réparations et
-                    assistance.
-                    <br><br>
-                    En parallèle, je vais effectuer un stage dans des entreprises spécialisées dans la maintenance
-                    réseaux.
-                    Ces expériences me permettront d’appliquer mes compétences dans
-                    un cadre réel et de me familiariser avec les attentes du marché du travail. Par exemple, je
-                    m'intéresse à travailler dans des start-ups où les défis sont nombreux
-                    et variés, ou dans des grandes entreprises où je pourrais me concentrer sur des projets
-                    spécifiques
-                    à long terme.
-                    <br><br>
-                    À plus long terme, mon objectif est de travailler dans le réseaux, capable de réagir le plus
-                    rapidement possible et utiliser mes compétences et mes experiences à défaut pour résoudre les
-                    problèmes dans le réseaux afin d'impacter le moins possible les services ayant des problèmes
-                    informatiques.
-                </p>
-        </section>
-        <section class="project"> <!-- Début de la section de projet -->
-            <h3>Hébergement sécurisé de mon portfolio avec Windows Server et IIS</h3> <!-- Titre du projet -->
-            <p>Je travaille actuellement sur l'hébergement sécurisé de mon portfolio en utilisant Windows Server et IIS.
-            </p> <!-- Bref aperçu du projet -->
-            <button onclick="toggleDetails(this)">Détails</button>
-            <!-- Bouton pour afficher ou masquer les détails du projet -->
-            <div class="project-details"> <!-- Conteneur pour les détails du projet -->
-                <p>
-                    Pour commencer, j'ai voulu m'assurer que tout fonctionnait correctement avant de me lancer. J'ai
-                    donc testé le processus sur une machine virtuelle. Cette étape m'a permis de simuler l'environnement
-                    réel et de détecter d'éventuelles difficultés, notamment au niveau de la configuration initiale.
-                    <br><br>
-                    Après avoir validé le fonctionnement sur la machine virtuelle, j'ai réussi à héberger mon portfolio
-                    en local. J'ai ainsi pu y accéder depuis une machine hôte connectée au même réseau local. Cela m'a
-                    permis de vérifier la faisabilité de l'hébergement et de m'assurer que la connexion entre les
-                    appareils se faisait sans problème.
-                    <br><br>
-                    Pour progresser dans ce projet, j'ai récupéré un ordinateur datant un peu, mais suffisamment
-                    puissant pour supporter cette tâche. J'ai réinstallé Windows Server dessus afin de créer un
-                    environnement stable et adapté à mes besoins. J'ai également commencé à configurer un serveur DNS,
-                    essentiel pour gérer les noms de domaine, mais je n'ai pas encore installé IIS. Cela sera une étape
-                    cruciale pour rendre mon site accessible en ligne.
-                    <br><br>
-                    En parallèle, je me suis penché sur la question des certificats SSL, qui sont indispensables pour
-                    garantir des connexions sécurisées. Je suis actuellement en train de réfléchir entre l'utilisation
-                    d'un certificat gratuit ou payant, en fonction des avantages qu'ils offrent en termes de sécurité et
-                    de crédibilité. Cette décision aura un impact direct sur la protection des données échangées par les
-                    utilisateurs.
-                    <br><br>
-                    Pour permettre l'accès public à mon portfolio, je vais modifier les paramètres de ma box internet.
-                    Je prévois de configurer une redirection des requêtes HTTPS vers mon serveur, garantissant ainsi un
-                    accès fluide et sécurisé au site. Par ailleurs, afin de renforcer la sécurité de mon infrastructure,
-                    je vais investir dans un switch et configurer un VLAN. Cette segmentation isolera mon site web de
-                    mon réseau local, ajoutant une couche de sécurité supplémentaire en limitant les interactions entre
-                    les deux réseaux.
-                    <br><br>
-                    Enfin, pour compléter ces mesures, je vais créer des règles strictes au niveau du pare-feu de mon
-                    réseau. Cela permettra de filtrer les connexions et de bloquer les tentatives d'accès malveillantes.
-                    Mon objectif est de garantir une cybersécurité robuste et fiable pour protéger les utilisateurs de
-                    mon site, tout en assurant un accès fluide et sans interruption.
-                    <br><br>
-                    Ce projet me permet de combiner mes compétences en réseaux informatiques, ma passion pour la
-                    technologie et mon envie d’apprendre en permanence. C'est une démarche complète, enrichissante et
-                    motivante qui me prépare à faire face à des défis techniques réels et à améliorer mes compétences
-                    professionnelles.
-                </p>
-            </div>
-        </section>
+            <article class="project-card">
+                <img src="../images/portfolio-preview.jpg" alt="Aperçu Portfolio" class="card-img">
+                <div class="card-content">
+                    <h3>Mon Portfolio Web</h3>
+                    <p class="short-desc">Développement complet de mon site vitrine en HTML/CSS/JS.</p>
+                    <button onclick="toggleDetails(this)">Voir les détails</button>
+                    <div class="project-details">
+                        <p>
+                            La création de mon portfolio en ligne a été un projet enrichissant.
+                            J'ai commencé par des maquettes pour définir l'identité visuelle.
+                            Techniquement, j'ai utilisé HTML5 et CSS3 pour le design, et un peu de JavaScript pour l'interactivité.
+                            J'utilise Git pour le versioning.
+                        </p>
+                    </div>
+                </div>
+            </article>
 
+            <article class="project-card">
+                <img src="../images/pc-gamer.jpg" alt="Image non mis en place" class="card-img">
+                <div class="card-content">
+                    <h3>Montage PC Gamer</h3>
+                    <p class="short-desc">Sélection des composants, assemblage et configuration BIOS.</p>
+                    <button onclick="toggleDetails(this)">Voir les détails</button>
+                    <div class="project-details">
+                        <p>
+                            Sélection des composants selon budget/perf. Assemblage complet (CM, CPU, RAM, Ventirad).
+                            Gestion du cable management pour le flux d'air.
+                            Installation Windows et pilotes, résolution des conflits et benchmarks.
+                        </p>
+                    </div>
+                </div>
+            </article>
 
+            <article class="project-card">
+                <img src="../images/futur-projet.jpg" alt="Projet Avenir" class="card-img">
+                <div class="card-content">
+                    <h3>Projet Professionnel</h3>
+                    <p class="short-desc">Poursuite en Licence Informatique après le BTS SIO.</p>
+                    <button onclick="toggleDetails(this)">Voir les détails</button>
+                    <div class="project-details">
+                        <p>
+                            Mon objectif : Licence Informatique pour me spécialiser en maintenance réseaux et support.
+                            Ambition future : Création d'entreprise de dépannage et conseil.
+                        </p>
+                    </div>
+                </div>
+            </article>
 
-        </div> <!-- Fin du conteneur des détails du futur projet professionnel -->
-        </section> <!-- Fin de la section de projet -->
+            <article class="project-card">
+                <img src="../images/windows-server.jpg" alt="Image non mis en place" class="card-img">
+                <div class="card-content">
+                    <h3>Hébergement Windows Server</h3>
+                    <p class="short-desc">Mise en place d'un serveur web IIS sécurisé à domicile.</p>
+                    <button onclick="toggleDetails(this)">Voir les détails</button>
+                    <div class="project-details">
+                        <p>
+                            Hébergement sur machine physique dédiée avec Windows Server.
+                            Configuration DNS et IIS. Gestion des certificats SSL.
+                            Sécurisation via segmentation réseau (VLAN) et règles Pare-feu strictes.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+        </div>
     </main>
 
-    <footer class="spécifieprojets"> <!-- Début du pied de page -->
-        <p>&copy; 2024 Mon Portfolio</p> <!-- Contenu du pied de page -->
-    </footer> <!-- Fin du pied de page -->
+    <footer class="spécifieprojets">
+        <p>&copy; 2024 Mon Portfolio</p>
+    </footer>
 
     <script>
         function toggleDetails(button) {
-            const project = button.closest('.project');
-            project.classList.toggle('show-details'); //Fonction pour afficher ou masquer les détails d'un projet -->
+            // Trouve le div "project-details" voisin du bouton
+            const details = button.nextElementSibling;
+            // Bascule l'affichage
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                button.textContent = "Voir les détails";
+            } else {
+                details.style.display = "block";
+                button.textContent = "Masquer";
+            }
         }
     </script>
-
 </body>
-
 </html>
