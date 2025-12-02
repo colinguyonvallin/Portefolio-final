@@ -591,13 +591,21 @@ main.full-width {
     margin-top: 20px;
 }
 
-/* --- IMAGES DE FOND (Les placeholders) --- */
-/* Remplace ces URL par tes vrais fichiers une fois téléchargés */
+/* --- IMAGES DE FOND (LISTE COMPLÈTE) --- */
+
+/* Intro & Artistes */
 .section-me { background-image: url('../images/bg_scene.jpg'); background-color: #222; }
 .section-rhcp { background-image: url('../images/bg_rhcp.jpg'); background-color: #ff4500; }
 .section-floyd { background-image: url('../images/bg_pinkfloyd.jpg'); background-color: #1a1a2e; }
-.section-ledzep { background-image: url('../images/bg_ledzep.jpg'); background-color: #d4af37; }
+.section-ledzep { background-image: url('../images/bg_ledzep.jpg'); background-color: #d4af37; } /* Celle qui manquait ! */
+.section-m { background-image: url('../images/bg_m.jpg'); background-color: #d63384; }
+.section-bertignac { background-image: url('../images/bg_bertignac.jpg'); background-color: #555; }
+.section-hendrix { background-image: url('../images/bg_hendrix.jpg'); background-color: #6f42c1; }
 
+/* Matos & Parcours */
+.section-strato { background-image: url('../images/bg_strato.jpg'); background-color: #8b4513; }
+.section-gear { background-image: url('../images/bg_gear.jpg'); background-color: #212529; }
+.section-parcours { background-image: url('../images/bg_parcours.jpg'); background-color: #343a40; }
 /* --- OVERRIDES (On force le plein écran) --- */
 
 /* On cible le MAIN soit par sa classe, soit parce qu'il est dans la page passion */
