@@ -2,24 +2,26 @@
    1. IMPORTATIONS & CONFIGURATION DE BASE
    ========================================= */
 
-/* Import de la police 'Montserrat' pour un look plus moderne (si tu veux l'utiliser) */
+/* Import de la police 'Montserrat' pour un look moderne */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
 
-/* Reset de base pour éviter les bugs d'affichage */
+/* Reset de base pour les marges et le box-sizing */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html, body {
+html {
     width: 100%;
     height: 100%;
-    /* C'est ICI la magie : on active l'aimant vertical (y) obligatoire (mandatory) */
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth; /* Pour que les clics sur le menu soient fluides aussi */
+    /* Scroll Snap pour la page Passions */
+    scroll-snap-type: y mandatory; 
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Montserrat', Arial, sans-serif; /* Police par défaut */
+    font-family: 'Montserrat', Arial, sans-serif;
     line-height: 1.6;
     background-color: #E8EDF3; /* Fond gris clair pour les pages classiques */
     color: #333;
@@ -27,6 +29,12 @@ body {
     flex-direction: column; /* Permet de coller le footer en bas */
     min-height: 100vh;
     font-size: 18px;
+    padding-top: 0 !important; /* Pas de décalage inutile */
+}
+
+a {
+    color: #2365AD;
+    text-decoration: none;
 }
 
 /* =========================================
@@ -34,24 +42,25 @@ body {
    ========================================= */
 
 header {
-    background-color: #2365AD; /* Ton Bleu Principal */
+    background-color: #2365AD;
     color: #ffffff;
-    padding: 1rem 0;
+    padding: 1.5rem 0; /* Taille normale */
     text-align: center;
-    position: sticky; /* Le menu reste accroché en haut quand on descend */
+    position: sticky; /* Suit le scroll sans être fixé */
     top: 0;
     width: 100%;
+    margin: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Pour que le menu s'adapte sur mobile */
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -61,7 +70,6 @@ nav ul li {
 
 nav ul li a {
     color: #fff;
-    text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
     transition: color 0.3s ease;
@@ -69,14 +77,14 @@ nav ul li a {
 
 nav ul li a:hover,
 .nav-link:hover {
-    color: #a78fff; /* Couleur violette au survol */
+    color: #a78fff;
 }
 
 /* =========================================
-   3. STRUCTURE PRINCIPALE (La boîte blanche)
+   3. STRUCTURE PRINCIPALE (Pages Classiques)
    ========================================= */
 
-/* C'est le conteneur principal pour tes pages classiques (Accueil, CV, etc.) */
+/* Conteneur principal par défaut (Boîte blanche centrée) */
 main {
     padding: 2rem;
     background-color: #fff;
@@ -85,7 +93,7 @@ main {
     max-width: 1200px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
     border-radius: 12px;
-    flex: 1; /* Pousse le footer vers le bas si la page est vide */
+    flex: 1;
     position: relative;
     top: 0;
 }
@@ -102,19 +110,19 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Titres H2 globaux */
+/* Titres H2 pour les pages classiques */
 h2 {
     color: #2365AD;
     margin-top: 0;
 }
 
-/* On met la bordure bleue à gauche SAUF sur la page passions (classe full-width) */
+/* Bordure à gauche par défaut (sauf sur la page Passions) */
 main:not(.full-width) h2 {
      border-left: 5px solid #2365AD;
      padding-left: 15px;
 }
 
-/* Style spécifique pour les H2 "boutons" (anciens styles) */
+/* Style spécifique pour les H2 "boutons" */
 section h2.btn-style {
     background-color: #2365AD;
     color: #fff;
@@ -129,9 +137,20 @@ section h2.btn-style:hover {
     background-color: #1a4e82;
 }
 
-a {
-    color: #2365AD;
-    text-decoration: none;
+/* Boutons génériques */
+button {
+    background-color: #2365AD;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a4e82;
 }
 
 /* =========================================
@@ -143,13 +162,15 @@ footer {
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: auto;
+    /* Position stable : suit le contenu */
+    position: relative; 
+    margin-top: auto; 
     width: 100%;
     z-index: 20;
 }
 
 /* =========================================
-   5. PAGE : PROJETS (La Grille)
+   5. PAGE : PROJETS (Grille de Cartes)
    ========================================= */
 
 .projects-grid {
@@ -220,107 +241,8 @@ footer {
     display: block;
 }
 
-button {
-    background-color: #2365AD;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: auto;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #1a4e82;
-}
-
 /* =========================================
-   6. PAGE : CV & DIPLÔMES
-   ========================================= */
-
-.modal-content {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    transition: transform 0.25s ease;
-}
-
-.modal-content:hover {
-    transform: scale(1.1);
-}
-
-a.presentation {
-    background-color: #2365AD;
-    color: #ffffff;
-    justify-content: center;
-    display: inline-flex;
-    padding: 10px 20px;
-    outline: none;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-right: 0.625%;
-    text-align: center;
-    width: auto;
-}
-
-.presentation {
-    text-align: left;
-    margin-left: 0;
-    padding: 2rem;
-    background-color: #fff;
-    margin: 2rem auto;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 8px;
-    color: #000;
-}
-
-.main-title {
-    border-bottom: 2px solid #4CAF50;
-    padding-bottom: 10px;
-    border-left: none;
-}
-
-.no-bullets {
-    list-style: none;
-    padding: 0;
-}
-
-.centrerLi {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.no-bullets li b {
-    background: #f4f4f9;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: inline-block;
-}
-
-.test:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s;
-}
-
-a.specifieliens {
-    background-color: #2365AD;
-    color: #ffffff;
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 5px;
-    text-align: center;
-}
-
-/* =========================================
-   7. PAGE : EXPÉRIENCES
+   6. PAGES CLASSIQUES (CV, Expériences, Veille)
    ========================================= */
 
 .experience {
@@ -344,18 +266,6 @@ a.specifieliens {
     margin-bottom: 15px;
 }
 
-/* =========================================
-   8. PAGE : VEILLE TECHNOLOGIQUE
-   ========================================= */
-
-.subtitle {
-    color: #2365AD;
-    font-weight: normal;
-    margin-bottom: 30px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-
 .tools-container {
     display: flex;
     flex-wrap: wrap;
@@ -374,10 +284,6 @@ a.specifieliens {
     border-top: 4px solid #a28aff;
 }
 
-.tool-card:hover {
-    transform: translateY(-5px);
-}
-
 .tool-card h4 {
     color: #2365AD;
     margin-top: 0;
@@ -389,11 +295,6 @@ a.specifieliens {
     border-radius: 4px;
     margin-top: 15px;
     border: 1px solid #eee;
-}
-
-.custom-list {
-    list-style-type: none;
-    padding-left: 0;
 }
 
 .custom-list li {
@@ -417,60 +318,31 @@ a.specifieliens {
     margin-bottom: 40px;
 }
 
-.trend-item {
-    flex: 1;
-    min-width: 250px;
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    border-left: 5px solid #a28aff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+/* Styles pour les Diplômes et Certifications */
+.centrerLi {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.trend-item strong {
-    display: block;
-    color: #2365AD;
-    margin-bottom: 5px;
-    font-size: 1.1em;
-}
-
-.download-section {
-    text-align: center;
-    margin: 50px 0;
-}
-
-.btn-download {
-    background-color: #2365AD;
-    color: white;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
+.no-bullets li b {
+    background: #f4f4f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    box-shadow: 0 4px 15px rgba(35, 101, 173, 0.3);
-}
-
-.btn-download:hover {
-    background-color: #1a4e82;
-    color: #fff;
-    transform: scale(1.05);
-}
-
-.construction-gif {
-    text-align: center;
-    margin-top: 40px;
 }
 
 /* =========================================
-   9. PAGE : PASSIONS (NOUVEAU STYLE IMMERSIF)
+   7. PAGE : PASSIONS (NOUVEAU STYLE IMMERSIF)
    ========================================= */
 
-/* --- OVERRIDES (On change les règles de base juste pour cette page) --- */
+/* --- OVERRIDES (Force le plein écran) --- */
 
-/* 1. On annule la "Boîte blanche" du main habituel */
-main.full-width {
+/* Force le plein écran et supprime le cadre blanc */
+main.full-width, 
+body.body_passion_immersive main {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -480,12 +352,12 @@ main.full-width {
     border-radius: 0 !important;
 }
 
-/* 2. Fond noir spécial pour l'ambiance concert */
+/* Fond noir pour l'ambiance concert */
 .body_passion_immersive {
     background-color: #000;
 }
 
-/* --- STRUCTURE PARALLAX --- */
+/* --- STRUCTURE PARALLAX & SCROLL SNAP --- */
 
 .immersive-section {
     height: 100vh;
@@ -495,54 +367,49 @@ main.full-width {
     align-items: center;
     position: relative;
     
-    /* Magie du Parallax */
+    /* Magie du Parallax : fond fixe */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     
-    /* NOUVELLE LIGNE : L'aimant va s'accrocher au début (start) de la section */
+    /* SCROLL SNAP : Point d'arrêt */
     scroll-snap-align: start;
-    scroll-snap-stop: always; /* Force l'arrêt sur chaque section (on ne peut pas en sauter 3 d'un coup) */
+    scroll-snap-stop: always;
 }
 
-/* Le filtre noir par-dessus l'image pour que le texte soit lisible */
+/* Filtre noir sur les images de fond */
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Assombrit le fond */
+    background: rgba(0, 0, 0, 0.65);
     z-index: 1;
 }
 
-/* --- CONTENU DES SECTIONS --- */
+/* --- CONTENU & TYPOGRAPHIE IMMERSIVE --- */
 
 .content-box {
     position: relative;
-    z-index: 2; /* Au-dessus de l'overlay */
+    z-index: 2;
     display: flex;
     align-items: center;
     gap: 60px;
     
     /* Effet "Verre Fumé" */
-    background: rgba(0, 0, 0, 0.7) !important; /* Fond noir un peu plus foncé */
-    backdrop-filter: blur(15px); /* Flou d'arrière plan */
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(15px);
     padding: 60px !important;
     border-radius: 30px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure fine blanche */
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Grosse ombre pour le relief */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     
     width: 80%;
     max-width: 1100px;
     color: white;
-}
-
-/* Inverse l'ordre image/texte (texte à droite, image à gauche, ou l'inverse) */
-.reverse-layout {
-    flex-direction: row-reverse;
-    text-align: right;
+    transition: all 0.5s ease;
 }
 
 /* Images Artistes (Rondes) */
@@ -554,10 +421,6 @@ main.full-width {
     border: 4px solid rgba(255,255,255,0.9);
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
     transition: transform 0.5s ease;
-}
-
-.artist-img:hover {
-    transform: scale(1.05) rotate(3deg); /* Petit effet sympa au survol */
 }
 
 /* Typographie Spéciale Passions */
@@ -574,8 +437,9 @@ main.full-width {
     line-height: 1.1;
 }
 
+/* Titres H3 */
 .immersive-section h3 {
-    color: #ffd700 !important; /* Or */
+    color: #ffd700 !important;
     font-size: 1.8rem;
     margin-top: 0;
     text-transform: uppercase;
@@ -591,143 +455,86 @@ main.full-width {
     margin-top: 20px;
 }
 
-/* --- IMAGES DE FOND (LISTE COMPLÈTE) --- */
+/* --- STYLE FRISE CHRONOLOGIQUE (TIMELINE) --- */
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    border-left: 4px solid #2365AD;
+    margin: 20px 0;
+}
 
-/* Intro & Artistes */
-.section-me { background-image: url('../images/bg_scene.jpg'); background-color: #222; }
-.section-rhcp { background-image: url('../images/bg_rhcp.jpg'); background-color: #ff4500; }
-.section-floyd { background-image: url('../images/bg_pinkfloyd.jpg'); background-color: #1a1a2e; }
-.section-ledzep { background-image: url('../images/bg_ledzep.jpg'); background-color: #d4af37; } /* Celle qui manquait ! */
-.section-m { background-image: url('../images/bg_m.jpg'); background-color: #d63384; }
-.section-bertignac { background-image: url('../images/bg_bertignac.jpg'); background-color: #555; }
-.section-hendrix { background-image: url('../images/bg_hendrix.jpg'); background-color: #6f42c1; }
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
 
-/* Matos & Parcours */
-.section-strato { background-image: url('../images/bg_strato.jpg'); background-color: #8b4513; }
-.section-gear { background-image: url('../images/bg_gear.jpg'); background-color: #212529; }
-.section-parcours { background-image: url('../images/bg_parcours.jpg'); background-color: #343a40; }
-/* --- OVERRIDES (On force le plein écran) --- */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -49px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    background: #ffd700;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
 
-/* On cible le MAIN soit par sa classe, soit parce qu'il est dans la page passion */
-main.full-width, 
+/* 1. Structure & Scroll (Force le plein écran et l'aimant) */
+html {
+    scroll-snap-type: y mandatory !important; 
+    scroll-behavior: smooth !important;
+}
+
+body.body_passion_immersive {
+    background-color: #000 !important; /* Fond noir */
+    padding-top: 0 !important; /* Retire tout décalage */
+}
+
+/* On force la suppression du cadre blanc (Main) */
 body.body_passion_immersive main {
-    width: 100% !important;        /* Largeur totale */
-    max-width: 100% !important;    /* Pas de limite max */
-    margin: 0 !important;          /* Pas de marges blanches sur les côtés */
-    padding: 0 !important;         /* Pas d'espace intérieur */
-    background: transparent !important; /* Pas de fond blanc */
-    box-shadow: none !important;   /* Pas d'ombre */
-    border-radius: 0 !important;   /* Pas de coins arrondis */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
-/* =========================================
-   ANIMATIONS SPÉCIFIQUES PAR SECTION
-   ========================================= */
-
-/* 1. ANIMATION "ZOOM MAJESTUEUX" (Pour la Scène) */
-@keyframes zoomInEffect {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+/* Section Immersive (Plein écran et Parallax) */
+.immersive-section {
+    height: 100vh !important;
+    width: 100% !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important; /* Force le Parallax */
+    scroll-snap-align: start !important; /* Force le point d'arrêt */
 }
 
-/* 2. ANIMATION "SLIDE LATÉRAL" (Pour les Artistes) */
-@keyframes slideInLeft {
-    from { transform: translateX(-100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
-@keyframes slideInRight {
-    from { transform: translateX(100px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-}
+/* 2. Fonds d'écran (Liste complète avec haute priorité) */
+.section-me { background-image: url('../images/bg_scene.jpg') !important; }
+.section-rhcp { background-image: url('../images/bg_rhcp.jpg') !important; }
+.section-floyd { background-image: url('../images/bg_pinkfloyd.jpg') !important; }
+.section-ledzep { background-image: url('../images/bg_ledzep.jpg') !important; }
+.section-m { background-image: url('../images/bg_m.jpg') !important; }
+.section-bertignac { background-image: url('../images/bg_bertignac.jpg') !important; }
+.section-hendrix { background-image: url('../images/bg_hendrix.jpg') !important; }
+.section-strato { background-image: url('../images/bg_strato.jpg') !important; }
+.section-gear { background-image: url('../images/bg_gear.jpg') !important; }
+.section-parcours { background-image: url('../images/bg_parcours.jpg') !important; }
+.section-pa-system { background-image: url('../images/bg_pa_system.jpg') !important; }
 
-/* 3. ANIMATION "REMONTÉE TECHNIQUE" (Pour le Matos) */
-@keyframes slideUpTech {
-    from { transform: translateY(100px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* 4. ANIMATION "FLOU NOSTALGIQUE" (Pour les Débuts) */
-@keyframes blurFadeIn {
-    from { filter: blur(20px); opacity: 0; transform: scale(1.1); }
-    to { filter: blur(0); opacity: 1; transform: scale(1); }
-}
-
-/* --- CLASSES DE DÉCLENCHEMENT (JS) --- */
-/* Par défaut, on cache le contenu pour qu'il puisse apparaître */
-.immersive-section .content-box {
-    opacity: 0; /* Caché au départ */
-    transition: all 0.5s ease;
+/* 3. Correction des photos rondes */
+.artist-img {
+    width: 280px !important;
+    height: 280px !important;
+    object-fit: cover !important;
+    border-radius: 50% !important;
 }
 
-/* Quand la classe 'visible' est ajoutée par le script : */
-
-/* SCÈNE : Zoom */
-.section-me.visible .content-box {
-    animation: zoomInEffect 1.2s cubic-bezier(0.2, 1, 0.3, 1) forwards;
-}
-
-/* ARTISTES (RHCP, Floyd, etc) : Slide Latéral */
-.section-rhcp.visible .content-box, 
-.section-floyd.visible .content-box,
-.section-ledzep.visible .content-box,
-.section-m.visible .content-box,
-.section-bertignac.visible .content-box,
-.section-hendrix.visible .content-box {
-    animation: slideInLeft 1s ease-out forwards;
-}
-/* Petite variation : une fois sur deux à droite (si tu veux pousser le détail) */
-.section-floyd.visible .content-box, 
-.section-m.visible .content-box, 
-.section-hendrix.visible .content-box {
-    animation: slideInRight 1s ease-out forwards; 
-}
-
-/* MATOS : Remontée */
-.section-gear.visible .content-box {
-    animation: slideUpTech 1s ease-out forwards;
-}
-
-/* DÉBUTS : Flou */
-.section-parcours.visible .content-box {
-    animation: blurFadeIn 2s ease forwards;
-}
-
-/* =========================================
-   10. RESPONSIVE (Mobiles)
-   ========================================= */
-
-@media (max-width: 768px) {
-    /* Menu empilé verticalement */
-    nav ul {
-        flex-direction: column;
-    }
-    
-    /* Structure principale s'adapte */
-    main {
-        width: 95%;
-        padding: 1rem;
-    }
-
-    /* Passions : On empile tout verticalement sur petit écran */
-    .content-box {
-        flex-direction: column;
-        text-align: center;
-        padding: 30px !important;
-        width: 95%;
-    }
-    
-    .reverse-layout {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .artist-img {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 20px;
-    }
-    
-    .immersive-section h2 {
-        font-size: 2.5rem !important;
-    }
+/* 4. Footer (S'assure qu'il est en bas et ne flotte plus) */
+footer {
+    position: relative !important;
+    bottom: auto !important;
 }
