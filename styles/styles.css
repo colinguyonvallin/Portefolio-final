@@ -333,7 +333,6 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: inline-block;
 }
-
 /* =========================================
    7. PAGE : PASSIONS (NOUVEAU STYLE IMMERSIF)
    ========================================= */
@@ -360,11 +359,13 @@ body.body_passion_immersive main {
 /* --- STRUCTURE PARALLAX & SCROLL SNAP --- */
 
 .immersive-section {
-    height: 100vh;
+    /* CORRECTION 1: Remplacer height par min-height ici aussi pour une meilleure compatibilité */
+    min-height: 100vh;
+    height: auto; 
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     position: relative;
     
     /* Magie du Parallax : fond fixe */
@@ -458,28 +459,77 @@ body.body_passion_immersive main {
 /* --- STYLE FRISE CHRONOLOGIQUE (TIMELINE) --- */
 .timeline {
     position: relative;
-    padding-left: 40px;
-    border-left: 4px solid #2365AD;
-    margin: 20px 0;
+    padding-left: 50px; /* Plus de padding pour le contenu */
+    border-left: 4px solid #ffd700; /* Ligne jaune or (or) pour contraster sur le fond noir */
+    margin: 40px 0;
+    width: 90%; /* Limite la largeur de la frise */
+    max-width: 900px;
 }
 
 .timeline-item {
     position: relative;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05); /* Léger fond transparent pour lire facilement */
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.timeline-item:hover {
+    background: rgba(255, 215, 0, 0.05); /* Légère lueur or au survol */
+}
+
+.timeline-item h3 {
+    color: #ffd700 !important; /* Couleur Or */
+    font-size: 1.8rem !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.timeline-item p {
+    font-size: 1rem;
+    color: #ccc;
+    margin-top: 0;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -49px;
-    top: 5px;
-    width: 16px;
-    height: 16px;
+    left: -59px; /* Positionnement du cercle à gauche de la ligne verticale */
+    top: 25px;
+    width: 14px;
+    height: 14px;
     background: #ffd700;
     border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    border: 4px solid #000; /* Bordure noire pour le cercle */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    z-index: 10;
 }
+
+/* Style de l'année (qui sera une span dans le H3) */
+.timeline-item .timeline-year {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Centre le conteneur de la frise */
+.timeline-section-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+
+
+
+
 
 /* 1. Structure & Scroll (Force le plein écran et l'aimant) */
 html {
@@ -504,12 +554,24 @@ body.body_passion_immersive main {
 
 /* Section Immersive (Plein écran et Parallax) */
 .immersive-section {
-    height: 100vh !important;
+    min-height: 100vh !important; /* FIX 1 MAJEUR: Permet le défilement si le contenu dépasse */
+    height: auto !important; /* Permet à la hauteur de s'ajuster */
     width: 100% !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important; /* Force le Parallax */
     scroll-snap-align: start !important; /* Force le point d'arrêt */
+}
+
+/* FIX 2 MAJEUR: Aligne le contenu de la section "parcours" en haut pour éviter le centrage */
+.section-parcours {
+    align-items: flex-start !important; 
+    padding-top: 5vh !important; /* Pour ne pas coller au menu */
+    padding-bottom: 5vh !important;
+}
+
+.section-parcours .content-box {
+    align-items: flex-start !important; /* Aligne les éléments internes (image/frise) en haut du content-box */
 }
 
 /* 2. Fonds d'écran (Liste complète avec haute priorité) */
