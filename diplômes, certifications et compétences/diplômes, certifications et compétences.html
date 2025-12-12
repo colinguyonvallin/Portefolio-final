@@ -4,20 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Rend la page responsive sur les appareils mobiles. -->
-    <title>Diplômes, Certifications et compétences</title>
-    <!-- Définit le titre de la page affiché dans l'onglet du navigateur. -->
-    <link rel="stylesheet" href="../styles/styles.css"> <!-- Lien vers une feuille de styles externe pour le design. -->
-</head>
+    <title>Diplômes, Certifications et Compétences</title>
+    <link rel="stylesheet" href="../styles/styles.css"> </head>
 
 <body>
     <header>
         <nav class="nav">
             <ul>
-                <!-- Liens de navigation pour les différentes sections du site. -->
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="../A propos de moi/A propos de moi.html" class="nav-link">A propos de moi</a></li>
-                </li>
                 <li><a href="../CV/cv.html">CV</a></li>
                 <li><a href="../diplômes, certifications et compétences/diplômes, certifications et compétences.html">Compétences
                         & Certifications</a></li>
@@ -30,50 +25,131 @@
     </header>
 
     <main>
-        <!-- Contenu principal : sections diplômes, certifications et compétences. -->
         <section>
-            <h2>Mes diplômes, Certifications et Compétences informatiques</h2>
+            <h2>Mes Diplômes, Certifications et Compétences</h2>
+            <p>Mon parcours académique et mes formations spécialisées attestent de ma base technique solide en infrastructure et sécurité des systèmes d'information.</p>
         </section>
-        <h2 class="main-title">Diplômes</h2>
-        <ul class="no-bullets centrerLi">
-            <li class="test"><b>Brevet des collèges mention assez bien, année 2021</b></li>
-            <li class="test"><b>Bac pro Système Numérique mention bien, année 2024</b></li>
-            <li class="test"><b>SST</b></li>
-        </ul>
 
-        <h2 class="main-title">Certifications</h2>
-        <ul>
-            <a class="specifieliens"
-                href="../diplômes, certifications et compétences/certif pix/attestation-pix-20210517.pdf">Certification
-                PIX 2021</a>
-            <a class="specifieliens"
-                href="../diplômes, certifications et compétences/certif pix/attestation-pix-20240205.pdf">Certification
-                PIX 2024</a>
-            <a class="specifieliens"
-                href="../diplômes, certifications et compétences/certification mooc cnil/certifications-mooc-CNIL-Colin-Guyon--Vallin.pdf">Certification
-                MOOC CNIL 2024</a>
-            <a class="specifieliens"
-                href="../diplômes, certifications et compétences/certification MOOC ANSSI/Certificat MOOC ANSSI Colin GUYON VALLIN.pdf">Certification
-                ANSSI 2024</a>
+        <h2 class="main-title">Diplômes & Formations Générales</h2>
+        <div class="diplomas-grid">
+            <div class="diploma-card">
+                <h3>BTS SIO</h3>
+                <p>Services Informatiques aux Organisations (en cours) Option SISR (Solutions
+d'infrastructure, systèmes
+et réseaux)</p>
+                <span class="diploma-year">Lycée Louis Pergaud, Besançon</span>
+            </div>
+            <div class="diploma-card">
+                <h3>Bac Pro SN RISC</h3>
+                <p>Systèmes Numériques, Option Réseaux Informatiques et Systèmes Communicants</p>
+                <span class="diploma-year">Obtenu en 2024 - Mention Bien</span>
+            </div>
+            <div class="diploma-card">
+                <h3>Brevet des collèges</h3>
+                <p>Mention Assez Bien</p>
+                <span class="diploma-year">Obtenu en 2021</span>
+            </div>
+        </div>
+        
+        <h2 class="main-title">Certifications Professionnelles</h2>
+        <div class="certifications-grid">
 
-        </ul>
+            <div class="certif-card pix-certif">
+                <h3>Certification PIX 2024</h3>
+                <p class="score-main">Score total : <strong>150 PIX</strong> (sur 896 max)</p>
+                <p>Certification reconnue comme professionnalisante par France Compétences.</p>
+                <ul class="certif-details">
+                    <li><strong>Compétence en collaboration :</strong> Niveau 2/7</li>
+                    <li><strong>Gérer et traiter des données :</strong> Niveau 2/7</li>
+                </ul>
+                <a href="../diplômes, certifications et compétences/certif pix/attestation-pix-20240205.pdf" target="_blank" class="certif-link">Voir l'attestation</a>
+            </div>
 
-        <h2 class="main-title">Compétences Informatiques</h2>
-        <p>Création et maintenance de serveurs sous Windows et Linux :
-            <b>AD DS</b> (Active Directory Domain Services) pour gérer les utilisateurs et les ordinateurs en réseau,
-            <b>DHCP</b> (Dynamic Host Configuration Protocol) pour attribuer automatiquement des adresses IP,
-            <b>Apache</b> pour servir des pages web,
-            <b>IIS</b> (Internet Information Services) pour héberger des applications web,
-            <b>rsync</b> pour la synchronisation des fichiers,
-            <b>FTP</b> (File Transfer Protocol) pour le transfert de fichiers,
-            <b>droits et partage de fichiers utilisateur</b> pour gérer les permissions d'accès,
-            <b>DNS</b> (Domain Name System) pour la résolution des noms de domaine.
-        </p>
+            <div class="certif-card anssi-certif">
+                <h3>MOOC ANSSI - Sécurité des SI</h3>
+                <p class="score-main">4 Modules validés avec des scores excellents</p>
+                <ul class="certif-details">
+                    <li><strong>Sécurité de l'Authentification :</strong> 100%</li>
+                    <li><strong>Sécurité sur Internet :</strong> 100%</li>
+                    <li><strong>Poste de Travail et Nomadisme :</strong> 100%</li>
+                    <li><strong>Panorama de la SSI :</strong> 96%</li>
+                </ul>
+                <a href="../diplômes, certifications et compétences/certification MOOC ANSSI/Certificat MOOC ANSSI Colin GUYON VALLIN.pdf" target="_blank" class="certif-link">Voir l'attestation</a>
+            </div>
+
+            <div class="certif-card cnil-certif">
+                <h3>MOOC CNIL - L'Atelier RGPD</h3>
+                <p class="score-main">5 Modules validés (décembre 2024)</p>
+                <ul class="certif-details">
+                    <li><strong>Modules 1, 3, 4 et 5 :</strong> 100%</li>
+                    <li><strong>Module 2 (Protection des données) :</strong> 95%</li>
+                    <li>Compétence sur la conformité et les responsabilités des acteurs RGPD.</li>
+                </ul>
+                <a href="../diplômes, certifications et compétences/certification mooc cnil/certifications-mooc-CNIL-Colin-Guyon--Vallin.pdf" target="_blank" class="certif-link">Voir l'attestation</a>
+            </div>
+            
+            <div class="certif-card sst-certif">
+                <h3>Sauveteur Secouriste du Travail (SST)</h3>
+                <p class="score-main">Formation valide</p>
+                <ul class="certif-details">
+                    <li>Compétence de base en prévention des risques professionnels et intervention en cas d'accident sur le lieu de travail.</li>
+                </ul>
+                </div>
+        </div>
+
+        <h2 class="main-title">Compétences Techniques</h2>
+        <p>Expertise acquise en maintenance, administration et déploiement de solutions d'infrastructure, notamment via mes projets et stages.</p>
+
+        <div class="skills-grid">
+            
+            <div class="skill-category">
+                <h3>Administration Système</h3>
+                <p>Maîtrise de la gestion et de la maintenance des environnements Windows et Linux.</p>
+                <div class="skills-tags-container">
+                    <span class="skill-tag">AD DS</span>
+                    <span class="skill-tag">Droits et Partage de Fichiers</span>
+                    <span class="skill-tag">rsync</span>
+                    <span class="skill-tag">Windows Server</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Réseaux & Infrastructure</h3>
+                <p>Configuration et dépannage des protocoles de base pour les réseaux locaux (LAN).</p>
+                <div class="skills-tags-container">
+                    <span class="skill-tag">DHCP</span>
+                    <span class="skill-tag">DNS</span>
+                    <span class="skill-tag">Câblage Réseau</span>
+                    <span class="skill-tag">Gestion LAN</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Serveurs Web & Applicatifs</h3>
+                <p>Mise en place et sécurisation de services web et de transfert de fichiers.</p>
+                <div class="skills-tags-container">
+                    <span class="skill-tag">IIS (Internet Information Services)</span>
+                    <span class="skill-tag">Apache</span>
+                    <span class="skill-tag">FTP</span>
+                    <span class="skill-tag">Certificats SSL</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Maintenance & Support</h3>
+                <p>Diagnostic, réparation et support utilisateur sur matériel et logiciel.</p>
+                <div class="skills-tags-container">
+                    <span class="skill-tag">Dépannage Matériel/Logiciel</span>
+                    <span class="skill-tag">Support Technique</span>
+                    <span class="skill-tag">Migration OS (Win 10 vers 11)</span>
+                    <span class="skill-tag">Installation & Déploiement</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2024 Mon Portfolio</p> <!-- Texte du pied de page avec les droits d'auteur. -->
-    </footer>
+        <p>&copy; 2024 Mon Portfolio</p> </footer>
 </body>
-
 </html>
