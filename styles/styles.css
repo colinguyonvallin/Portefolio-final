@@ -1240,3 +1240,120 @@ footer {
     .v3-analysis-grid { grid-template-columns: 1fr; }
     .v3-hero h1 { font-size: 1.8rem; }
 }
+
+/* =========================================
+   13. PAGE : STAGES & EXPÉRIENCES V3
+   ========================================= */
+
+.exp-v3-main {
+    max-width: 900px !important;
+    margin: 40px auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exp-hero {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.exp-hero h1 {
+    color: #2365AD;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* --- CARTES D'EXPÉRIENCE --- */
+.exp-card-v3 {
+    background: white;
+    width: 100%;
+    padding: 35px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-left: 8px solid #2365AD;
+    transition: transform 0.3s ease;
+}
+
+.exp-card-v3:hover {
+    transform: translateX(10px);
+}
+
+.exp-header-v3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.exp-title-group h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin: 10px 0 5px 0;
+}
+
+.company-name {
+    color: #a28aff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.exp-badge-duration {
+    background: #eef2f7;
+    color: #2365AD;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.exp-date-v3 {
+    font-weight: 700;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+/* --- LISTE DES TÂCHES --- */
+.exp-list-v3 {
+    list-style: none;
+    padding: 0;
+}
+
+.exp-list-v3 li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.exp-list-v3 li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #2365AD;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 650px) {
+    .exp-header-v3 {
+        flex-direction: column;
+    }
+    .exp-date-v3 {
+        order: -1;
+    }
+}
