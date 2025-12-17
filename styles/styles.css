@@ -242,83 +242,6 @@ footer {
 }
 
 /* =========================================
-   6. PAGES CLASSIQUES (CV, Expériences, Veille)
-   ========================================= */
-
-.experience {
-    margin-bottom: 40px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border-left: 4px solid #2365AD;
-}
-
-.experience h3 {
-    margin: 10px 0;
-    font-size: 1.5rem;
-    color: #a28aff;
-}
-
-.experience .details {
-    font-style: italic;
-    color: #666;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.tools-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.tool-card {
-    flex: 1;
-    min-width: 280px;
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    border-top: 4px solid #a28aff;
-}
-
-.tool-card h4 {
-    color: #2365AD;
-    margin-top: 0;
-}
-
-.tool-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-top: 15px;
-    border: 1px solid #eee;
-}
-
-.custom-list li {
-    margin-bottom: 10px;
-    padding-left: 15px;
-    border-left: 3px solid #2365AD;
-}
-
-.analysis-box {
-    background-color: #f0f8ff;
-    border-left: 5px solid #2365AD;
-    padding: 20px;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 30px;
-}
-
-.trends-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-/* =========================================
    7. PAGE : PASSIONS (NOUVEAU STYLE IMMERSIF)
    ========================================= */
 
@@ -899,4 +822,421 @@ footer {
     text-align: center;
     background-color: white;
     font-size: 1.1rem;
+}
+
+
+
+/* =========================================
+   10. PAGE : À PROPOS DE MOI
+   ========================================= */
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* Image ronde */
+    object-fit: cover;
+    border: 5px solid #2365AD;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Grille pour les cartes informatique/musique */
+.skills-cards-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.skill-card-about {
+    flex: 1;
+    background: #fdfdfd;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border-bottom: 4px solid #2365AD;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-card-about:hover {
+    transform: translateY(-5px);
+}
+
+.skill-card-about .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.philosophy-section {
+    margin-top: 50px;
+}
+
+.info-box {
+    background-color: #f0f4f8;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 6px solid #a28aff;
+}
+
+/* Responsive pour mobiles */
+@media (max-width: 768px) {
+    .about-container, .skills-cards-container {
+        flex-direction: column;
+    }
+}      
+
+
+/* =========================================
+   11. PAGE : CV (RÉSUMÉ GRAPHIQUE HTML)
+   ========================================= */
+
+.cv-web-container {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 40px auto !important;
+    max-width: 1100px !important;
+}
+
+/* Header du CV */
+.cv-header-web {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 8px solid #2365AD;
+}
+
+.cv-header-web h1 {
+    color: #2365AD;
+    font-size: 2.2rem;
+    margin: 0;
+}
+
+.cv-header-web .subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.btn-download-main {
+    background: #2365AD;
+    color: white !important;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-download-main:hover {
+    background: #1a4e82;
+    transform: scale(1.05);
+}
+
+/* Grille de contenu */
+.cv-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.cv-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cv-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Items du CV */
+.cv-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.cv-date {
+    min-width: 130px;
+    font-weight: 700;
+    color: #2365AD;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding-top: 5px;
+}
+
+.cv-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.company, .location {
+    color: #a28aff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cv-details ul {
+    padding-left: 20px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Colonne latérale */
+.side-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.side-section h3 {
+    color: #2365AD;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+.contact-list li { margin-bottom: 10px; }
+
+.skill-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-labels span {
+    background: #f0f4f8;
+    color: #2365AD;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .cv-content-grid { grid-template-columns: 1fr; }
+    .cv-header-web { flex-direction: column; text-align: center; gap: 20px; }
+    .cv-item { flex-direction: column; gap: 5px; }
+}
+
+/* --- Correction du Header CV Web --- */
+.cv-header-web {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between; /* Espace entre le texte et le bouton */
+    align-items: center;            /* Aligne verticalement au centre */
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 8px solid #2365AD;
+    flex-wrap: wrap;               /* Permet de passer à la ligne sur petit écran */
+    gap: 20px;
+}
+
+.header-info {
+    flex: 1;                       /* Prend tout l'espace disponible à gauche */
+    min-width: 300px;
+}
+
+.cv-header-web h1 {
+    color: #2365AD;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* Style du bouton rectifié */
+.btn-download-main {
+    background-color: #2365AD;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    white-space: nowrap;          /* Empêche le texte du bouton de se couper */
+}
+
+.btn-download-main:hover {
+    background-color: #1a4e82;
+    transform: translateY(-2px);
+}
+/* =========================================
+   12. PAGE : VEILLE TECHNOLOGIQUE V3 (ULTRA PRO)
+   ========================================= */
+
+/* On force le conteneur principal à être centré et sans bordure moche */
+.veille-v3-main {
+    max-width: 1100px !important;
+    margin: 40px auto !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 20px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* CENTRE TOUT */
+}
+
+.v3-content-block {
+    width: 100%;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    opacity: 1 !important; /* Force visibilité */
+    transform: none !important;
+    text-align: center;
+}
+
+/* --- HERO --- */
+.v3-hero {
+    background: linear-gradient(135deg, #2365AD 0%, #1a4e82 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.v3-hero h1 { color: white !important; font-size: 2.8rem; margin: 20px 0; border: none !important; }
+.v3-badge { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; }
+.v3-btn-main { 
+    display: inline-block; background: white; color: #2365AD !important; 
+    padding: 15px 30px; border-radius: 30px; font-weight: 700; margin-top: 20px;
+    transition: 0.3s;
+}
+.v3-btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+
+/* --- TITRES --- */
+.v3-content-block h2 {
+    display: inline-block;
+    margin-bottom: 30px;
+    border-left: none !important;
+    padding-left: 0 !important;
+    font-size: 2rem;
+    color: #2365AD;
+}
+
+/* --- TOOLS GRID --- */
+.v3-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.v3-tool-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.v3-tool-card:hover { transform: translateY(-5px); }
+
+/* FIX IMAGE : On donne une vraie taille aux images */
+.v3-img-wrapper {
+    width: 100%;
+    height: 200px; /* Taille fixe pour l'aperçu */
+    overflow: hidden;
+    border-bottom: 3px solid #2365AD;
+}
+
+.v3-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* L'image remplit proprement le cadre */
+}
+
+.v3-tool-info { padding: 20px; text-align: left; }
+.v3-tool-info h4 { color: #2365AD; margin-bottom: 10px; font-size: 1.2rem; }
+
+/* --- ANALYSIS --- */
+.v3-analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    text-align: left;
+}
+
+.v3-analysis-card { padding: 25px; border-radius: 15px; background: #fdfdfd; }
+.v3-green { border-top: 5px solid #28a745; }
+.v3-red { border-top: 5px solid #dc3545; }
+.v3-analysis-card ul { list-style: none; margin-top: 15px; }
+.v3-analysis-card li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+.v3-analysis-card li::before { content: "•"; position: absolute; left: 0; color: #2365AD; font-weight: bold; }
+
+/* --- HORIZONS PILLS --- */
+.v3-horizons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.v3-pill {
+    background: #eef2f7;
+    color: #2365AD;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    border: 1px solid #d0dae8;
+    transition: 0.3s;
+}
+
+.v3-pill:hover { background: #2365AD; color: white; }
+
+/* RESPONSIVE */
+@media (max-width: 800px) {
+    .v3-analysis-grid { grid-template-columns: 1fr; }
+    .v3-hero h1 { font-size: 1.8rem; }
 }
