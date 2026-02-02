@@ -72,9 +72,11 @@
                     <button onclick="toggleDetails(this)">Voir les détails</button>
                     <div class="project-details">
                         <p>
-                            Mon objectif : Licence Informatique pour me spécialiser en maintenance réseaux et support.
-                            Ambition future : Création d'entreprise de dépannage et conseil.
-                        </p>
+    <strong>Mon objectif :</strong> Poursuivre mes études en <strong>Licence Informatique (parcours Informatique Générale) au CNAM de Dole</strong>. 
+    Cette formation en alternance me permettra d'approfondir mes compétences techniques, notamment sur l'infrastructure des réseaux, la cybersécurité et les systèmes d'exploitation, tout en acquérant une solide expérience en entreprise.
+    <br><br>
+    <strong>Ambition future :</strong> j'envisage à terme la <strong>création d'une entreprise</strong> de conseil et de dépannage informatique pour accompagner les professionnels et particuliers dans la gestion de leur parc informatique.
+</p>
                     </div>
                 </div>
             </article>
@@ -94,6 +96,84 @@
                     </div>
                 </div>
             </article>
+
+     <article class="project-card">
+    <img src="../images/schema-vrrp.jpg" alt="Architecture Réseau VRRP" class="card-img">
+    
+    <div class="card-content">
+        <h3>Architecture Réseau & Haute Disponibilité</h3>
+        <p class="short-desc">Mise en place d'un cœur de réseau redondant (VRRP) sur équipements HPE.</p>
+        
+        <button onclick="toggleDetails(this)">Voir les détails</button>
+        
+        <div class="project-details">
+            <p>
+                Pour garantir la continuité de service internet et inter-VLAN, le protocole <strong>VRRP</strong> a été configuré sur les switches de cœur de réseau.
+            </p>
+
+            <div class="table-responsive">
+                <table class="tech-table">
+                    <thead>
+                        <tr>
+                            <th>VLAN</th>
+                            <th>Réseau</th>
+                            <th>HPE 1 (Master)</th>
+                            <th>Virtuelle (VIP)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>170</td>
+                            <td>Serveurs</td>
+                            <td>10.17.1.252</td>
+                            <td><strong>10.17.1.254</strong></td>
+                        </tr>
+                        <tr>
+                            <td>173</td>
+                            <td>RH / Adm</td>
+                            <td>192.168.3.252</td>
+                            <td><strong>192.168.3.254</strong></td>
+                        </tr>
+                        <tr>
+                            <td>174</td>
+                            <td>Com/Rédac</td>
+                            <td>192.168.4.252</td>
+                            <td><strong>192.168.4.254</strong></td>
+                        </tr>
+                        <tr>
+                            <td>178</td>
+                            <td>Qualité</td>
+                            <td>192.168.8.252</td>
+                            <td><strong>192.168.8.254</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
+                <em>Résultat : Basculement automatique vers le switch de secours en < 1 seconde lors d'une panne (testé par coupure électrique).</em>
+            </p>
+        </div>
+    </div>
+</article>
+
+<article class="project-card">
+    <img src="../images/cyber-security.jpg" alt="Sécurité DMZ et IDS" class="card-img">
+    <div class="card-content">
+        <h3>Cybersécurité : DMZ & Défense Active</h3>
+        <p class="short-desc">Sécurisation périmétrique multicouche avec OPNsense, Reverse-Proxy et IDS/IPS.</p>
+        <button onclick="toggleDetails(this)">Voir les détails</button>
+        <div class="project-details">
+            <p>
+                Conception d'une passerelle Internet sécurisée selon les recommandations de l'ANSSI pour l'entreprise GSB.<br><br>
+                <strong>Points clés :</strong><br>
+                • Architecture DMZ multi-niveaux : Isolation des services web via une cascade de pare-feux (filtrage NAT/PAT).<br>
+                • Rupture protocolaire : Mise en place d'un Reverse-Proxy pour la publication sécurisée de sites web et d'un Proxy sortant pour le contrôle des flux utilisateurs.<br>
+                • Sécurité Active : Déploiement d'une sonde IDS/IPS (Suricata) pour la détection d'intrusions (scans Nmap) et l'analyse de trafic applicatif.
+            </p>
+        </div>
+    </div>
+</article>
 
         </div>
     </main>

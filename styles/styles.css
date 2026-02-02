@@ -1,11 +1,8 @@
 /* =========================================
    1. IMPORTATIONS & CONFIGURATION DE BASE
    ========================================= */
-
-/* Import de la police 'Montserrat' pour un look moderne */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap');
 
-/* Reset de base pour les marges et le box-sizing */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,7 +12,6 @@
 html {
     width: 100%;
     height: 100%;
-    /* Scroll Snap pour la page Passions */
     scroll-snap-type: y mandatory; 
     scroll-behavior: smooth;
 }
@@ -23,13 +19,13 @@ html {
 body {
     font-family: 'Montserrat', Arial, sans-serif;
     line-height: 1.6;
-    background-color: #E8EDF3; /* Fond gris clair pour les pages classiques */
+    background-color: #E8EDF3;
     color: #333;
     display: flex;
-    flex-direction: column; /* Permet de coller le footer en bas */
+    flex-direction: column;
     min-height: 100vh;
     font-size: 18px;
-    padding-top: 0 !important; /* Pas de décalage inutile */
+    padding-top: 0 !important;
 }
 
 a {
@@ -38,15 +34,14 @@ a {
 }
 
 /* =========================================
-   2. HEADER & NAVIGATION (Le Menu)
+   2. HEADER & NAVIGATION
    ========================================= */
-
 header {
     background-color: #2365AD;
     color: #ffffff;
-    padding: 1.5rem 0; /* Taille normale */
+    padding: 1.5rem 0;
     text-align: center;
-    position: sticky; /* Suit le scroll sans être fixé */
+    position: sticky;
     top: 0;
     width: 100%;
     margin: 0;
@@ -83,8 +78,6 @@ nav ul li a:hover,
 /* =========================================
    3. STRUCTURE PRINCIPALE (Pages Classiques)
    ========================================= */
-
-/* Conteneur principal par défaut (Boîte blanche centrée) */
 main {
     padding: 2rem;
     background-color: #fff;
@@ -98,7 +91,6 @@ main {
     top: 0;
 }
 
-/* Animations d'apparition */
 section {
     margin-bottom: 20px;
     opacity: 0;
@@ -110,19 +102,16 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Titres H2 pour les pages classiques */
 h2 {
     color: #2365AD;
     margin-top: 0;
 }
 
-/* Bordure à gauche par défaut (sauf sur la page Passions) */
 main:not(.full-width) h2 {
      border-left: 5px solid #2365AD;
      padding-left: 15px;
 }
 
-/* Style spécifique pour les H2 "boutons" */
 section h2.btn-style {
     background-color: #2365AD;
     color: #fff;
@@ -137,7 +126,6 @@ section h2.btn-style:hover {
     background-color: #1a4e82;
 }
 
-/* Boutons génériques */
 button {
     background-color: #2365AD;
     color: white;
@@ -153,16 +141,11 @@ button:hover {
     background-color: #1a4e82;
 }
 
-/* =========================================
-   4. PIED DE PAGE (Footer)
-   ========================================= */
-
 footer {
     background-color: #2366AD;
     color: white;
     text-align: center;
     padding: 15px;
-    /* Position stable : suit le contenu */
     position: relative; 
     margin-top: auto; 
     width: 100%;
@@ -170,353 +153,405 @@ footer {
 }
 
 /* =========================================
-   5. PAGE : PROJETS (Grille de Cartes)
+   4. PAGE : ACCUEIL
    ========================================= */
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    padding: 20px 0;
-}
-
-.project-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #eee;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-.card-img {
+.main-accueil {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 auto;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 4px solid #2365AD;
-    background-color: #ddd;
+    max-width: 100%;
+    border-radius: 0;
 }
 
-.card-content {
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.card-content h3 {
-    margin-top: 0;
-    color: #2365AD;
-}
-
-.short-desc {
-    color: #555;
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-.project-details {
-    display: none;
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #eee;
-    font-size: 0.9rem;
-    color: #555;
-    background-color: #f9fcfd;
-    padding: 10px;
-    border-radius: 5px;
-    animation: fadeIn 0.5s;
-}
-
-.show-details .project-details {
-    display: block;
-}
-
-/* =========================================
-   7. PAGE : PASSIONS (NOUVEAU STYLE IMMERSIF)
-   ========================================= */
-
-/* --- OVERRIDES (Force le plein écran) --- */
-
-/* Force le plein écran et supprime le cadre blanc */
-main.full-width, 
-body.body_passion_immersive main {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-}
-
-/* Fond noir pour l'ambiance concert */
-.body_passion_immersive {
-    background-color: #000;
-}
-
-/* --- STRUCTURE PARALLAX & SCROLL SNAP --- */
-
-.immersive-section {
-    /* CORRECTION 1: Remplacer height par min-height ici aussi pour une meilleure compatibilité */
-    min-height: 100vh;
-    height: auto; 
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    position: relative;
-    
-    /* Magie du Parallax : fond fixe */
+.hero-section {
+    background-image: url('../images/futur-projet.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-    /* SCROLL SNAP : Point d'arrêt */
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
-/* Filtre noir sur les images de fond */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    padding: 100px 20px;
     z-index: 1;
 }
 
-/* --- CONTENU & TYPOGRAPHIE IMMERSIVE --- */
-
-.content-box {
-    position: relative;
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
     z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 40px;
+    background: rgba(35, 101, 173, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #a78fff;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.divider-hero {
+    width: 50%;
+    margin: 20px auto;
+    border: 0;
+    border-top: 3px solid #2365AD;
+}
+
+.hero-message {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #2365AD;
+    color: white;
+    border: 2px solid #2365AD;
+}
+
+.btn-primary:hover {
+    background-color: #1a4e82;
+    border-color: #1a4e82;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #a78fff;
+}
+
+.key-facts-section {
+    padding: 40px 20px;
+    background-color: #f4f4f9;
+    text-align: center;
+}
+
+.key-facts-section .section-title {
+    color: #2365AD;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    border-left: none;
+    padding-left: 0;
+}
+
+.fact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fact-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #a28aff;
+}
+
+.fact-card h3 {
+    color: #2365AD;
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.fact-card p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.contact-preview {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: white;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   5. PAGE : A PROPOS DE MOI
+   ========================================= */
+.about-container {
     display: flex;
     align-items: center;
-    gap: 60px;
-    
-    /* Effet "Verre Fumé" */
-    background: rgba(0, 0, 0, 0.7) !important;
-    backdrop-filter: blur(15px);
-    padding: 60px !important;
-    border-radius: 30px !important;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    
-    width: 80%;
-    max-width: 1100px;
-    color: white;
-    transition: all 0.5s ease;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
 }
 
-/* Images Artistes (Rondes) */
-.artist-img {
-    width: 280px;
-    height: 280px;
-    object-fit: cover;
+.about-image {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
-    border: 4px solid rgba(255,255,255,0.9);
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    transition: transform 0.5s ease;
+    object-fit: cover;
+    border: 5px solid #2365AD;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Typographie Spéciale Passions */
-.immersive-section h2 {
-    color: #fff !important;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-    font-size: 3.5rem !important;
-    font-weight: 800;
-    text-transform: uppercase;
-    text-shadow: 0 4px 15px rgba(0,0,0,0.8);
-    margin-bottom: 10px !important;
-    line-height: 1.1;
+.about-text {
+    flex: 2;
+    min-width: 300px;
 }
 
-/* Titres H3 */
-.immersive-section h3 {
-    color: #ffd700 !important;
-    font-size: 1.8rem;
-    margin-top: 0;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-}
-
-.immersive-section p {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: #ddd;
-    line-height: 1.7;
+.skills-cards-container {
+    display: flex;
+    gap: 25px;
     margin-top: 20px;
 }
 
-/* --- STYLE FRISE CHRONOLOGIQUE (TIMELINE) --- */
-.timeline {
-    position: relative;
-    padding-left: 50px; /* Plus de padding pour le contenu */
-    border-left: 4px solid #ffd700; /* Ligne jaune or (or) pour contraster sur le fond noir */
-    margin: 40px 0;
-    width: 90%; /* Limite la largeur de la frise */
-    max-width: 900px;
+.skill-card-about {
+    flex: 1;
+    background: #fdfdfd;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    border-bottom: 4px solid #2365AD;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
 }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 50px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05); /* Léger fond transparent pour lire facilement */
-    border-radius: 8px;
-    transition: background 0.3s;
+.skill-card-about:hover {
+    transform: translateY(-5px);
 }
 
-.timeline-item:hover {
-    background: rgba(255, 215, 0, 0.05); /* Légère lueur or au survol */
+.skill-card-about .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
 }
 
-.timeline-item h3 {
-    color: #ffd700 !important; /* Couleur Or */
-    font-size: 1.8rem !important;
-    text-transform: none !important;
-    letter-spacing: normal !important;
-    margin-top: 0;
-    margin-bottom: 5px;
+.philosophy-section {
+    margin-top: 50px;
 }
 
-.timeline-item p {
-    font-size: 1rem;
-    color: #ccc;
-    margin-top: 0;
+.info-box {
+    background-color: #f0f4f8;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 6px solid #a28aff;
 }
 
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -59px; /* Positionnement du cercle à gauche de la ligne verticale */
-    top: 25px;
-    width: 14px;
-    height: 14px;
-    background: #ffd700;
-    border-radius: 50%;
-    border: 4px solid #000; /* Bordure noire pour le cercle */
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
-    z-index: 10;
-}
-
-/* Style de l'année (qui sera une span dans le H3) */
-.timeline-item .timeline-year {
-    display: block;
-    font-size: 0.8em;
-    font-weight: 300;
-    color: #fff;
-    margin-bottom: 5px;
-}
-
-/* Centre le conteneur de la frise */
-.timeline-section-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-}
-
-
-
-
-
-
-
-/* 1. Structure & Scroll (Force le plein écran et l'aimant) */
-html {
-    scroll-snap-type: y mandatory !important; 
-    scroll-behavior: smooth !important;
-}
-
-body.body_passion_immersive {
-    background-color: #000 !important; /* Fond noir */
-    padding-top: 0 !important; /* Retire tout décalage */
-}
-
-/* On force la suppression du cadre blanc (Main) */
-body.body_passion_immersive main {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-}
-
-/* Section Immersive (Plein écran et Parallax) */
-.immersive-section {
-    min-height: 100vh !important; /* FIX 1 MAJEUR: Permet le défilement si le contenu dépasse */
-    height: auto !important; /* Permet à la hauteur de s'ajuster */
-    width: 100% !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-attachment: fixed !important; /* Force le Parallax */
-    scroll-snap-align: start !important; /* Force le point d'arrêt */
-}
-
-/* FIX 2 MAJEUR: Aligne le contenu de la section "parcours" en haut pour éviter le centrage */
-.section-parcours {
-    align-items: flex-start !important; 
-    padding-top: 5vh !important; /* Pour ne pas coller au menu */
-    padding-bottom: 5vh !important;
-}
-
-.section-parcours .content-box {
-    align-items: flex-start !important; /* Aligne les éléments internes (image/frise) en haut du content-box */
-}
-
-/* 2. Fonds d'écran (Liste complète avec haute priorité) */
-.section-me { background-image: url('../images/bg_scene.jpg') !important; }
-.section-rhcp { background-image: url('../images/bg_rhcp.jpg') !important; }
-.section-floyd { background-image: url('../images/bg_pinkfloyd.jpg') !important; }
-.section-ledzep { background-image: url('../images/bg_ledzep.jpg') !important; }
-.section-m { background-image: url('../images/bg_m.jpg') !important; }
-.section-bertignac { background-image: url('../images/bg_bertignac.jpg') !important; }
-.section-hendrix { background-image: url('../images/bg_hendrix.jpg') !important; }
-.section-strato { background-image: url('../images/bg_strato.jpg') !important; }
-.section-gear { background-image: url('../images/bg_gear.jpg') !important; }
-.section-parcours { background-image: url('../images/bg_parcours.jpg') !important; }
-.section-pa-system { background-image: url('../images/bg_pa_system.jpg') !important; }
-
-/* 3. Correction des photos rondes */
-.artist-img {
-    width: 280px !important;
-    height: 280px !important;
-    object-fit: cover !important;
-    border-radius: 50% !important;
-}
-
-/* 4. Footer (S'assure qu'il est en bas et ne flotte plus) */
-footer {
-    position: relative !important;
-    bottom: auto !important;
-}
-
-
-
+@media (max-width: 768px) {
+    .about-container, .skills-cards-container {
+        flex-direction: column;
+    }
+} 
 
 /* =========================================
-   8. PAGE : COMPÉTENCES & CERTIFICATIONS
+   6. PAGE : CV (WEB CONTAINER)
    ========================================= */
+.cv-web-container {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 40px auto !important;
+    max-width: 1100px !important;
+}
 
-/* --- DIPLÔMES GRID --- */
+.cv-header-web {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 8px solid #2365AD;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.cv-header-web h1 {
+    color: #2365AD;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-download-main {
+    background-color: #2365AD;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-download-main:hover {
+    background-color: #1a4e82;
+    transform: translateY(-2px);
+}
+
+.cv-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.cv-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cv-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cv-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.cv-date {
+    min-width: 130px;
+    font-weight: 700;
+    color: #2365AD;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    padding-top: 5px;
+}
+
+.cv-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.company, .location {
+    color: #a28aff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.cv-details ul {
+    padding-left: 20px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.side-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.side-section h3 {
+    color: #2365AD;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    font-size: 0.95rem;
+}
+
+.contact-list li { margin-bottom: 10px; }
+
+.skill-labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-labels span {
+    background: #f0f4f8;
+    color: #2365AD;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+@media (max-width: 850px) {
+    .cv-content-grid { grid-template-columns: 1fr; }
+    .cv-header-web { flex-direction: column; text-align: center; gap: 20px; }
+    .cv-item { flex-direction: column; gap: 5px; }
+}
+
+/* =========================================
+   7. PAGE : COMPETENCES & CERTIFICATIONS
+   ========================================= */
 .diplomas-grid {
     display: flex;
     justify-content: space-around;
@@ -547,8 +582,6 @@ footer {
     margin-top: 5px;
 }
 
-
-/* --- CERTIFICATIONS GRID (CARDS) --- */
 .certifications-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -562,7 +595,7 @@ footer {
     padding: 25px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
-    border-left: 5px solid; /* Définie par la classe spécifique */
+    border-left: 5px solid;
 }
 
 .certif-card:hover {
@@ -603,13 +636,11 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Couleurs spécifiques par certification */
 .pix-certif { border-left-color: #ffd700; }
-.anssi-certif { border-left-color: #ff4500; } /* Orange sécurité */
-.cnil-certif { border-left-color: #007bff; } /* Bleu institutionnel */
-.sst-certif { border-left-color: #28a745; } /* Vert */
+.anssi-certif { border-left-color: #ff4500; }
+.cnil-certif { border-left-color: #007bff; }
+.sst-certif { border-left-color: #28a745; }
 
-/* --- COMPÉTENCES GRID (TAGS) --- */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -644,473 +675,163 @@ footer {
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
-    white-space: nowrap; /* Empêche les tags de se couper */
+    white-space: nowrap;
 }
 
 /* =========================================
-   9. PAGE : ACCUEIL (HERO SECTION)
+   8. PAGE : PROJETS
    ========================================= */
-
-/* Retirer le cadre blanc par défaut pour le contenu en dessous du Hero */
-.main-accueil {
-    background-color: transparent;
-    box-shadow: none;
-    padding: 0;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%;
-    border-radius: 0;
-}
-
-/* --- HERO SECTION --- */
-
-.hero-section {
-    background-image: url('../images/futur-projet.jpg'); /* Utilise l'image du serveur/rack */
-    background-size: cover;
-    background-position: center;
-    min-height: 80vh; /* Hauteur de la section */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
-    position: relative;
-    padding: 100px 20px;
-    z-index: 1;
-}
-
-/* Filtre obscurcissant l'image pour que le texte soit lisible */
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.75); /* Ombre noire pour le contraste */
-    z-index: 2;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-    padding: 40px;
-    background: rgba(35, 101, 173, 0.2); /* Léger fond bleu transparent */
-    border-radius: 15px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    color: #a78fff; /* Couleur d'accent */
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #ddd;
-    margin-bottom: 20px;
-}
-
-.divider-hero {
-    width: 50%;
-    margin: 20px auto;
-    border: 0;
-    border-top: 3px solid #2365AD;
-}
-
-.hero-message {
-    font-size: 1.1rem;
-    margin-bottom: 30px;
-    font-weight: 300;
-    line-height: 1.6;
-}
-
-/* --- BOUTONS D'ACTION --- */
-
-.hero-actions {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.btn-primary, .btn-secondary {
-    padding: 15px 30px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
-    background-color: #2365AD;
-    color: white;
-    border: 2px solid #2365AD;
-}
-
-.btn-primary:hover {
-    background-color: #1a4e82;
-    border-color: #1a4e82;
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #a78fff;
-}
-
-/* --- SECTION CHIFFRES CLÉS --- */
-
-.key-facts-section {
-    padding: 40px 20px;
-    background-color: #f4f4f9; /* Fond gris clair pour contraster */
-    text-align: center;
-}
-
-.key-facts-section .section-title {
-    color: #2365AD;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    border-left: none;
-    padding-left: 0;
-}
-
-.fact-cards-grid {
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 20px 0;
+    /* CORRECTIF : Empêche les cartes de s'étirer */
+    align-items: start;
 }
 
-.fact-card {
+.project-card {
     background: white;
-    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    border-top: 4px solid #a28aff;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
 }
 
-.fact-card h3 {
-    color: #2365AD;
-    font-size: 1.3rem;
-    margin-top: 0;
-    margin-bottom: 10px;
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
 }
 
-.fact-card p {
+/* CORRECTIF IMAGE : Plus de rognage */
+.card-img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain; /* L'image s'adapte sans couper */
+    background-color: #f8f9fa; /* Fond neutre */
+    border-bottom: 4px solid #2365AD;
+}
+
+.card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-content h3 { margin-top: 0; color: #2365AD; }
+
+.short-desc {
     color: #555;
     font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
 }
 
-/* --- PRÉVISUALISATION CONTACT --- */
-
-.contact-preview {
-    padding: 30px 20px;
-    text-align: center;
-    background-color: white;
-    font-size: 1.1rem;
+.project-details {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+    background-color: #f9fcfd;
+    padding: 10px;
+    border-radius: 5px;
+    animation: fadeIn 0.5s;
 }
 
+.show-details .project-details { display: block; }
 
+/* FIX COULEUR BOUTON */
+.btn-style {
+    background-color: #2365AD !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+    font-weight: 700 !important;
+}
 
-/* =========================================
-   10. PAGE : À PROPOS DE MOI
-   ========================================= */
+.btn-style:hover {
+    background-color: #1a4e82 !important;
+}
 
-.about-container {
+/* --- NOUNVEAUTÉS : Galerie d'images dans détails --- */
+.project-gallery {
     display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 40px;
     flex-wrap: wrap;
-}
-
-.about-image {
-    flex: 1;
-    min-width: 250px;
-    display: flex;
+    gap: 15px;
+    margin-top: 15px;
     justify-content: center;
 }
 
-.profile-img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%; /* Image ronde */
-    object-fit: cover;
-    border: 5px solid #2365AD;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-.about-text {
-    flex: 2;
-    min-width: 300px;
-}
-
-/* Grille pour les cartes informatique/musique */
-.skills-cards-container {
-    display: flex;
-    gap: 25px;
-    margin-top: 20px;
-}
-
-.skill-card-about {
-    flex: 1;
-    background: #fdfdfd;
-    padding: 30px;
-    border-radius: 15px;
+.gallery-item {
+    width: 100%;
+    max-width: 250px;
     text-align: center;
-    border-bottom: 4px solid #2365AD;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
 }
 
-.skill-card-about:hover {
-    transform: translateY(-5px);
+.gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.skill-card-about .icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.philosophy-section {
-    margin-top: 50px;
-}
-
-.info-box {
-    background-color: #f0f4f8;
-    padding: 30px;
-    border-radius: 12px;
-    border-left: 6px solid #a28aff;
-}
-
-/* Responsive pour mobiles */
-@media (max-width: 768px) {
-    .about-container, .skills-cards-container {
-        flex-direction: column;
-    }
-}      
-
-
-/* =========================================
-   11. PAGE : CV (RÉSUMÉ GRAPHIQUE HTML)
-   ========================================= */
-
-.cv-web-container {
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0 !important;
-    margin: 40px auto !important;
-    max-width: 1100px !important;
-}
-
-/* Header du CV */
-.cv-header-web {
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 8px solid #2365AD;
-}
-
-.cv-header-web h1 {
-    color: #2365AD;
-    font-size: 2.2rem;
-    margin: 0;
-}
-
-.cv-header-web .subtitle {
-    color: #666;
-    font-size: 1.1rem;
-    margin-top: 5px;
-}
-
-.btn-download-main {
-    background: #2365AD;
-    color: white !important;
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-weight: 700;
-    transition: transform 0.2s, background 0.3s;
-}
-
-.btn-download-main:hover {
-    background: #1a4e82;
+.gallery-item img:hover {
     transform: scale(1.05);
 }
 
-/* Grille de contenu */
-.cv-content-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
+.gallery-item span {
+    display: block;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
 }
 
-.cv-section {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+/* --- NOUVEAUTÉS : Tableaux Responsives --- */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
 }
 
-.cv-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-}
-
-/* Items du CV */
-.cv-item {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 25px;
-}
-
-.cv-date {
-    min-width: 130px;
-    font-weight: 700;
-    color: #2365AD;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    padding-top: 5px;
-}
-
-.cv-details h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: #333;
-}
-
-.company, .location {
-    color: #a28aff;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.cv-details ul {
-    padding-left: 20px;
-    color: #555;
-    font-size: 0.95rem;
-}
-
-/* Colonne latérale */
-.side-section {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-.side-section h3 {
-    color: #2365AD;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.contact-list {
-    list-style: none;
-    padding: 0;
-    font-size: 0.95rem;
-}
-
-.contact-list li { margin-bottom: 10px; }
-
-.skill-labels {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.skill-labels span {
-    background: #f0f4f8;
-    color: #2365AD;
-    padding: 5px 12px;
-    border-radius: 15px;
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
     font-size: 0.85rem;
+    min-width: 400px; /* Largeur min pour éviter l'écrasement */
+}
+
+.tech-table th, .tech-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tech-table th {
+    background-color: #f8f9fa;
+    color: #333;
     font-weight: 600;
 }
 
-/* Responsive */
-@media (max-width: 850px) {
-    .cv-content-grid { grid-template-columns: 1fr; }
-    .cv-header-web { flex-direction: column; text-align: center; gap: 20px; }
-    .cv-item { flex-direction: column; gap: 5px; }
+.tech-table tr:last-child td {
+    border-bottom: none;
 }
 
-/* --- Correction du Header CV Web --- */
-.cv-header-web {
-    background: white;
-    padding: 30px 40px;
-    border-radius: 15px;
-    display: flex;
-    justify-content: space-between; /* Espace entre le texte et le bouton */
-    align-items: center;            /* Aligne verticalement au centre */
-    margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    border-left: 8px solid #2365AD;
-    flex-wrap: wrap;               /* Permet de passer à la ligne sur petit écran */
-    gap: 20px;
-}
-
-.header-info {
-    flex: 1;                       /* Prend tout l'espace disponible à gauche */
-    min-width: 300px;
-}
-
-.cv-header-web h1 {
-    color: #2365AD;
-    font-size: 2rem;
-    margin-bottom: 5px;
-}
-
-.header-actions {
-    display: flex;
-    align-items: center;
-}
-
-/* Style du bouton rectifié */
-.btn-download-main {
-    background-color: #2365AD;
-    color: white !important;
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    white-space: nowrap;          /* Empêche le texte du bouton de se couper */
-}
-
-.btn-download-main:hover {
-    background-color: #1a4e82;
-    transform: translateY(-2px);
-}
 /* =========================================
-   12. PAGE : VEILLE TECHNOLOGIQUE V3 (ULTRA PRO)
+   9. PAGE : VEILLE TECHNOLOGIQUE (V3)
    ========================================= */
-
-/* On force le conteneur principal à être centré et sans bordure moche */
 .veille-v3-main {
     max-width: 1100px !important;
     margin: 40px auto !important;
@@ -1119,7 +840,7 @@ footer {
     padding: 0 20px !important;
     display: flex;
     flex-direction: column;
-    align-items: center; /* CENTRE TOUT */
+    align-items: center;
 }
 
 .v3-content-block {
@@ -1129,12 +850,11 @@ footer {
     border-radius: 20px;
     margin-bottom: 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    opacity: 1 !important; /* Force visibilité */
+    opacity: 1 !important;
     transform: none !important;
     text-align: center;
 }
 
-/* --- HERO --- */
 .v3-hero {
     background: linear-gradient(135deg, #2365AD 0%, #1a4e82 100%);
     color: white;
@@ -1146,15 +866,17 @@ footer {
 }
 
 .v3-hero h1 { color: white !important; font-size: 2.8rem; margin: 20px 0; border: none !important; }
+
 .v3-badge { background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; }
+
 .v3-btn-main { 
     display: inline-block; background: white; color: #2365AD !important; 
     padding: 15px 30px; border-radius: 30px; font-weight: 700; margin-top: 20px;
     transition: 0.3s;
 }
+
 .v3-btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 
-/* --- TITRES --- */
 .v3-content-block h2 {
     display: inline-block;
     margin-bottom: 30px;
@@ -1164,87 +886,48 @@ footer {
     color: #2365AD;
 }
 
-/* --- TOOLS GRID --- */
-.v3-tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    width: 100%;
-}
+.v3-tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; width: 100%; }
 
-.v3-tool-card {
-    background: #f8f9fa;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 1px solid #eee;
-    transition: 0.3s;
-}
+.v3-tool-card { background: #f8f9fa; border-radius: 15px; overflow: hidden; border: 1px solid #eee; transition: 0.3s; }
 
 .v3-tool-card:hover { transform: translateY(-5px); }
 
-/* FIX IMAGE : On donne une vraie taille aux images */
-.v3-img-wrapper {
-    width: 100%;
-    height: 200px; /* Taille fixe pour l'aperçu */
-    overflow: hidden;
-    border-bottom: 3px solid #2365AD;
-}
+.v3-img-wrapper { width: 100%; height: 200px; overflow: hidden; border-bottom: 3px solid #2365AD; }
 
-.v3-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* L'image remplit proprement le cadre */
-}
+.v3-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
 .v3-tool-info { padding: 20px; text-align: left; }
+
 .v3-tool-info h4 { color: #2365AD; margin-bottom: 10px; font-size: 1.2rem; }
 
-/* --- ANALYSIS --- */
-.v3-analysis-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    text-align: left;
-}
+.v3-analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; }
 
 .v3-analysis-card { padding: 25px; border-radius: 15px; background: #fdfdfd; }
+
 .v3-green { border-top: 5px solid #28a745; }
+
 .v3-red { border-top: 5px solid #dc3545; }
+
 .v3-analysis-card ul { list-style: none; margin-top: 15px; }
+
 .v3-analysis-card li { margin-bottom: 10px; padding-left: 20px; position: relative; }
+
 .v3-analysis-card li::before { content: "•"; position: absolute; left: 0; color: #2365AD; font-weight: bold; }
 
-/* --- HORIZONS PILLS --- */
-.v3-horizons-container {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
+.v3-horizons-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 10px; }
 
-.v3-pill {
-    background: #eef2f7;
-    color: #2365AD;
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-weight: 700;
-    border: 1px solid #d0dae8;
-    transition: 0.3s;
-}
+.v3-pill { background: #eef2f7; color: #2365AD; padding: 10px 25px; border-radius: 50px; font-weight: 700; border: 1px solid #d0dae8; transition: 0.3s; }
 
 .v3-pill:hover { background: #2365AD; color: white; }
 
-/* RESPONSIVE */
 @media (max-width: 800px) {
     .v3-analysis-grid { grid-template-columns: 1fr; }
     .v3-hero h1 { font-size: 1.8rem; }
 }
 
 /* =========================================
-   13. PAGE : STAGES & EXPÉRIENCES V3
+   10. PAGE : STAGES & EXPÉRIENCES (V3)
    ========================================= */
-
 .exp-v3-main {
     max-width: 900px !important;
     margin: 40px auto !important;
@@ -1256,21 +939,10 @@ footer {
     align-items: center;
 }
 
-.exp-hero {
-    text-align: center;
-    margin-bottom: 50px;
-    width: 100%;
-}
+.exp-hero { text-align: center; margin-bottom: 50px; width: 100%; }
 
-.exp-hero h1 {
-    color: #2365AD;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    border: none !important;
-    padding: 0 !important;
-}
+.exp-hero h1 { color: #2365AD; font-size: 2.5rem; margin-bottom: 10px; border: none !important; padding: 0 !important; }
 
-/* --- CARTES D'EXPÉRIENCE --- */
 .exp-card-v3 {
     background: white;
     width: 100%;
@@ -1282,9 +954,7 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.exp-card-v3:hover {
-    transform: translateX(10px);
-}
+.exp-card-v3:hover { transform: translateX(10px); }
 
 .exp-header-v3 {
     display: flex;
@@ -1297,63 +967,109 @@ footer {
     gap: 15px;
 }
 
-.exp-title-group h3 {
-    color: #333;
-    font-size: 1.4rem;
-    margin: 10px 0 5px 0;
+.exp-title-group h3 { color: #333; font-size: 1.4rem; margin: 10px 0 5px 0; }
+
+.company-name { color: #a28aff; font-weight: 700; font-size: 1.1rem; margin: 0; }
+
+.exp-badge-duration { background: #eef2f7; color: #2365AD; padding: 4px 12px; border-radius: 50px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; }
+
+.exp-date-v3 { font-weight: 700; color: #999; font-size: 0.9rem; }
+
+.exp-list-v3 { list-style: none; padding: 0; }
+
+.exp-list-v3 li { position: relative; padding-left: 25px; margin-bottom: 12px; color: #555; line-height: 1.5; }
+
+.exp-list-v3 li::before { content: "→"; position: absolute; left: 0; color: #2365AD; font-weight: bold; }
+
+@media (max-width: 650px) { .exp-header-v3 { flex-direction: column; } .exp-date-v3 { order: -1; } }
+
+/* =========================================
+   11. PAGE : PASSIONS (IMMERSIVE)
+   ========================================= */
+body.body_passion_immersive { background-color: #000 !important; }
+
+body.body_passion_immersive main {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
 }
 
-.company-name {
-    color: #a28aff;
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-.exp-badge-duration {
-    background: #eef2f7;
-    color: #2365AD;
-    padding: 4px 12px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-}
-
-.exp-date-v3 {
-    font-weight: 700;
-    color: #999;
-    font-size: 0.9rem;
-}
-
-/* --- LISTE DES TÂCHES --- */
-.exp-list-v3 {
-    list-style: none;
-    padding: 0;
-}
-
-.exp-list-v3 li {
+.immersive-section {
+    min-height: 100vh !important;
+    height: auto !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
     position: relative;
-    padding-left: 25px;
-    margin-bottom: 12px;
-    color: #555;
-    line-height: 1.5;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
 }
 
-.exp-list-v3 li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #2365AD;
-    font-weight: bold;
+.section-me { background-image: url('../images/bg_scene.jpg') !important; }
+.section-rhcp { background-image: url('../images/bg_rhcp.jpg') !important; }
+.section-floyd { background-image: url('../images/bg_pinkfloyd.jpg') !important; }
+.section-ledzep { background-image: url('../images/bg_ledzep.jpg') !important; }
+.section-m { background-image: url('../images/bg_m.jpg') !important; }
+.section-bertignac { background-image: url('../images/bg_bertignac.jpg') !important; }
+.section-hendrix { background-image: url('../images/bg_hendrix.jpg') !important; }
+.section-strato { background-image: url('../images/bg_strato.jpg') !important; }
+.section-gear { background-image: url('../images/bg_gear.jpg') !important; }
+.section-parcours { background-image: url('../images/bg_parcours.jpg') !important; }
+.section-pa-system { background-image: url('../images/bg_pa_system.jpg') !important; }
+
+.section-parcours { align-items: flex-start !important; padding-top: 5vh !important; padding-bottom: 5vh !important; }
+
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.65); z-index: 1; }
+
+.content-box {
+    position: relative; z-index: 2; display: flex; align-items: center; gap: 60px;
+    background: rgba(0, 0, 0, 0.7) !important; backdrop-filter: blur(15px);
+    padding: 60px !important; border-radius: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    width: 80%; max-width: 1100px; color: white; transition: all 0.5s ease;
 }
 
-/* RESPONSIVE */
-@media (max-width: 650px) {
-    .exp-header-v3 {
-        flex-direction: column;
-    }
-    .exp-date-v3 {
-        order: -1;
-    }
+.artist-img {
+    width: 280px !important; height: 280px !important;
+    object-fit: cover !important; border-radius: 50% !important;
+    border: 4px solid rgba(255,255,255,0.9);
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
+
+.immersive-section h2 {
+    color: #fff !important; background: none !important; border: none !important; padding: 0 !important;
+    font-size: 3.5rem !important; font-weight: 800; text-transform: uppercase;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8); margin-bottom: 10px !important; line-height: 1.1;
+}
+
+.immersive-section h3 { color: #ffd700 !important; font-size: 1.8rem; margin-top: 0; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
+
+.immersive-section p { font-size: 1.2rem; font-weight: 300; color: #ddd; line-height: 1.7; margin-top: 20px; }
+
+.timeline { position: relative; padding-left: 50px; border-left: 4px solid #ffd700; margin: 40px 0; width: 90%; max-width: 900px; }
+
+.timeline-item { position: relative; margin-bottom: 50px; padding: 15px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; transition: background 0.3s; }
+
+.timeline-item h3 { color: #ffd700 !important; font-size: 1.8rem !important; text-transform: none !important; letter-spacing: normal !important; margin-top: 0; margin-bottom: 5px; }
+
+.timeline-item p { font-size: 1rem; color: #ccc; margin-top: 0; }
+
+.timeline-item::before {
+    content: ''; position: absolute; left: -59px; top: 25px; width: 14px; height: 14px;
+    background: #ffd700; border-radius: 50%; border: 4px solid #000;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); z-index: 10;
+}
+
+.timeline-item .timeline-year { display: block; font-size: 0.8em; font-weight: 300; color: #fff; margin-bottom: 5px; }
+
+.timeline-section-container { display: flex; justify-content: center; align-items: flex-start; width: 100%; }
