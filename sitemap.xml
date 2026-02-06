@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/a-propos/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/cv/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/competences/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/projets/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/veille/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/experiences/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.portfolio-colinguyonvallin.fr/passions/</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
