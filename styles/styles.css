@@ -829,6 +829,28 @@ footer {
     border-bottom: none;
 }
 
+
+/* Gestion des cartes sans images */
+.project-card:not(:has(img)) {
+    border-top: 4px solid #2365AD;
+}
+
+/* On crée un bandeau de couleur de remplacement pour garder la même hauteur */
+.no-img-placeholder {
+    width: 100%;
+    height: 150px; /* Plus court qu'une image pour gagner de la place */
+    background: linear-gradient(135deg, #2365AD 0%, #1a4e82 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+}
+
+/* Optionnel : Ajustement si tu enlèves carrément la balise img */
+.project-card .card-content {
+    padding-top: 20px;
+}
 /* =========================================
    9. PAGE : VEILLE TECHNOLOGIQUE (V3)
    ========================================= */

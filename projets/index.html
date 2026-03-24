@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mes Projets - Colin Guyon Vallin</title>
     <link rel="stylesheet" href="../styles/styles.css">
+    <style>
+        /* Styles rapides pour la pagination sans toucher à ton fichier CSS externe */
+        .pagination-container {
+            text-align: center;
+            margin: 40px 0 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .pagination-btn {
+            background-color: #2365AD;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .pagination-btn.active {
+            background-color: #1a4e82;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
@@ -29,164 +54,204 @@
             <p>Voici un aperçu de mes réalisations techniques et académiques.</p>
         </section>
 
-        <div class="projects-grid">
+        <div id="page-1" class="projects-wrapper">
+            <div class="projects-grid">
 
-            <article class="project-card">
-                <img src="../images/portfolio-preview.jpg" alt="Aperçu Portfolio" class="card-img">
-                <div class="card-content">
-                    <h3>Mon Portfolio Web</h3>
-                    <p class="short-desc">Développement complet de mon site vitrine en HTML/CSS/JS.</p>
-                    <button onclick="toggleDetails(this)">Voir les détails</button>
-                    <div class="project-details">
-                        <p>
-                            La création de mon portfolio en ligne a été un projet enrichissant.
-                            J'ai commencé par des maquettes pour définir l'identité visuelle.
-                            Techniquement, j'ai utilisé HTML5 et CSS3 pour le design, et un peu de JavaScript pour l'interactivité.
-                            J'utilise Git pour le versioning.
-                        </p>
+                <article class="project-card">
+                    <img src="../images/portfolio-preview.jpg" alt="Aperçu Portfolio" class="card-img">
+                    <div class="card-content">
+                        <h3>Mon Portfolio Web</h3>
+                        <p class="short-desc">Développement complet de mon site vitrine en HTML/CSS/JS.</p>
+                        <button onclick="toggleDetails(this)">Voir les détails</button>
+                        <div class="project-details">
+                            <p>
+                                La création de mon portfolio en ligne a été un projet enrichissant.
+                                J'ai commencé par des maquettes pour définir l'identité visuelle.
+                                Techniquement, j'ai utilisé HTML5 et CSS3 pour le design, et un peu de JavaScript pour l'interactivité.
+                                J'utilise Git pour le versioning.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <article class="project-card">
-                <img src="../images/pc-gamer.jpg" alt="Image non mis en place" class="card-img">
-                <div class="card-content">
-                    <h3>Montage PC Gamer</h3>
-                    <p class="short-desc">Sélection des composants, assemblage et configuration BIOS.</p>
-                    <button onclick="toggleDetails(this)">Voir les détails</button>
-                    <div class="project-details">
-                        <p>
-                            Sélection des composants selon budget/perf. Assemblage complet (CM, CPU, RAM, Ventirad).
-                            Gestion du cable management pour le flux d'air.
-                            Installation Windows et pilotes, résolution des conflits et benchmarks.
-                        </p>
+                <article class="project-card">
+                    <img src="../images/pc-gamer.jpg" alt="Montage PC" class="card-img">
+                    <div class="card-content">
+                        <h3>Montage PC Gamer</h3>
+                        <p class="short-desc">Sélection des composants, assemblage et configuration BIOS.</p>
+                        <button onclick="toggleDetails(this)">Voir les détails</button>
+                        <div class="project-details">
+                            <p>
+                                Sélection des composants selon budget/perf. Assemblage complet (CM, CPU, RAM, Ventirad).
+                                Gestion du cable management pour le flux d'air.
+                                Installation Windows et pilotes, résolution des conflits et benchmarks.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <article class="project-card">
-                <img src="../images/futur-projet.jpg" alt="Projet Avenir" class="card-img">
-                <div class="card-content">
-                    <h3>Projet Professionnel</h3>
-                    <p class="short-desc">Poursuite en Licence Informatique après le BTS SIO.</p>
-                    <button onclick="toggleDetails(this)">Voir les détails</button>
-                    <div class="project-details">
-                        <p>
-    <strong>Mon objectif :</strong> Poursuivre mes études en <strong>Licence Informatique (parcours Informatique Générale) au CNAM de Dole</strong>. 
-    Cette formation en alternance me permettra d'approfondir mes compétences techniques, notamment sur l'infrastructure des réseaux, la cybersécurité et les systèmes d'exploitation, tout en acquérant une solide expérience en entreprise.
-    <br><br>
-    <strong>Ambition future :</strong> j'envisage à terme la <strong>création d'une entreprise</strong> de conseil et de dépannage informatique pour accompagner les professionnels et particuliers dans la gestion de leur parc informatique.
-</p>
+                <article class="project-card">
+                    <img src="../images/futur-projet.jpg" alt="Projet Avenir" class="card-img">
+                    <div class="card-content">
+                        <h3>Projet Professionnel</h3>
+                        <p class="short-desc">Poursuite en Licence Informatique après le BTS SIO.</p>
+                        <button onclick="toggleDetails(this)">Voir les détails</button>
+                        <div class="project-details">
+                            <p>
+                                <strong>Mon objectif :</strong> Poursuivre mes études en <strong>Licence Informatique au CNAM de Dole</strong>. 
+                                Cette formation me permettra d'approfondir mes compétences techniques tout en acquérant une solide expérience en entreprise.
+                                <br><br>
+                                <strong>Ambition future :</strong> Création d'une entreprise de conseil et de dépannage informatique.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
 
-            <article class="project-card">
-                <img src="../images/windows-server.jpg" alt="Image non mis en place" class="card-img">
-                <div class="card-content">
-                    <h3>Hébergement Windows Server</h3>
-                    <p class="short-desc">Mise en place d'un serveur web IIS sécurisé à domicile.</p>
-                    <button onclick="toggleDetails(this)">Voir les détails</button>
-                    <div class="project-details">
-                        <p>
-                            Hébergement sur machine physique dédiée avec Windows Server.
-                            Configuration DNS et IIS. Gestion des certificats SSL.
-                            Sécurisation via segmentation réseau (VLAN) et règles Pare-feu strictes.
-                        </p>
+                <article class="project-card">
+                    <img src="../images/windows-server.jpg" alt="Hébergement Server" class="card-img">
+                    <div class="card-content">
+                        <h3>Hébergement Windows Server</h3>
+                        <p class="short-desc">Mise en place d'un serveur web IIS sécurisé à domicile.</p>
+                        <button onclick="toggleDetails(this)">Voir les détails</button>
+                        <div class="project-details">
+                            <p>
+                                Hébergement sur machine physique dédiée avec Windows Server.
+                                Configuration DNS et IIS. Gestion des certificats SSL.
+                                Sécurisation via segmentation réseau (VLAN) et règles Pare-feu strictes.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
 
-     <article class="project-card">
-    <img src="../images/schema-vrrp.jpg" alt="Architecture Réseau VRRP" class="card-img">
-    
-    <div class="card-content">
-        <h3>Architecture Réseau & Haute Disponibilité</h3>
-        <p class="short-desc">Mise en place d'un cœur de réseau redondant (VRRP) sur équipements HPE.</p>
-        
-        <button onclick="toggleDetails(this)">Voir les détails</button>
-        
-        <div class="project-details">
-            <p>
-                Pour garantir la continuité de service internet et inter-VLAN, le protocole <strong>VRRP</strong> a été configuré sur les switches de cœur de réseau.
-            </p>
+                <article class="project-card">
+                    <img src="../images/schema-vrrp.jpg" alt="Architecture Réseau VRRP" class="card-img">
+                    <div class="card-content">
+                        <h3>Architecture Réseau & Haute Disponibilité</h3>
+                        <p class="short-desc">Mise en place d'un cœur de réseau redondant (VRRP) sur équipements HPE.</p>
+                        <button onclick="toggleDetails(this)">Voir les détails</button>
+                        <div class="project-details">
+                            <p>Pour garantir la continuité de service internet et inter-VLAN, le protocole VRRP a été configuré sur les switches de cœur de réseau.</p>
+                            <div class="table-responsive">
+                                <table class="tech-table">
+                                    <thead>
+                                        <tr><th>VLAN</th><th>Réseau</th><th>VIP</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>170</td><td>Serveurs</td><td>10.17.1.254</td></tr>
+                                        <tr><td>173</td><td>RH / Adm</td><td>192.168.3.254</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="table-responsive">
-                <table class="tech-table">
-                    <thead>
-                        <tr>
-                            <th>VLAN</th>
-                            <th>Réseau</th>
-                            <th>HPE 1 (Master)</th>
-                            <th>Virtuelle (VIP)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>170</td>
-                            <td>Serveurs</td>
-                            <td>10.17.1.252</td>
-                            <td><strong>10.17.1.254</strong></td>
-                        </tr>
-                        <tr>
-                            <td>173</td>
-                            <td>RH / Adm</td>
-                            <td>192.168.3.252</td>
-                            <td><strong>192.168.3.254</strong></td>
-                        </tr>
-                        <tr>
-                            <td>174</td>
-                            <td>Com/Rédac</td>
-                            <td>192.168.4.252</td>
-                            <td><strong>192.168.4.254</strong></td>
-                        </tr>
-                        <tr>
-                            <td>178</td>
-                            <td>Qualité</td>
-                            <td>192.168.8.252</td>
-                            <td><strong>192.168.8.254</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <article class="project-card">
+                    <img src="../images/cyber-security.jpg" alt="Sécurité DMZ" class="card-img">
+                    <div class="card-content">
+                        <h3>Cybersécurité : DMZ & Défense Active</h3>
+                        <p class="short-desc">Sécurisation périmétrique multicouche avec OPNsense et IDS/IPS.</p>
+                        <button onclick="toggleDetails(this)">Voir les détails</button>
+                        <div class="project-details">
+                            <p>Architecture DMZ multi-niveaux, Reverse-Proxy et déploiement d'une sonde IDS/IPS pour la détection d'intrusions.</p>
+                        </div>
+                    </div>
+                </article>
+
             </div>
-
-            <p style="margin-top: 10px; font-size: 0.9em; color: #555;">
-                <em>Résultat : Basculement automatique vers le switch de secours en < 1 seconde lors d'une panne (testé par coupure électrique).</em>
-            </p>
         </div>
+
+       <div id="page-2" class="projects-wrapper" style="display: none;">
+    <div class="projects-grid">
+
+        <article class="project-card">
+            <img src="../images/stirling-pdf.jpg" alt="Stirling PDF" class="card-img">
+            <div class="card-content">
+                <h3>Solution Stirling-PDF</h3>
+                <p class="short-desc">Déploiement conteneurisé d'une solution souveraine de manipulation PDF pour les agents du Conseil Régional.</p>
+                <button onclick="toggleDetails(this)">Voir les détails</button>
+                <div class="project-details">
+                    <p><strong>Objectif :</strong> Garantir la confidentialité des documents administratifs en interne.</p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Déploiement de l’application via <strong>Docker</strong> et orchestration avec <strong>Docker-Compose</strong> sur Oracle Linux.</li>
+                        <li>Mise en place d’un <strong>Reverse Proxy Nginx</strong> pour centraliser les flux et gérer les certificats <strong>SSL/TLS (HTTPS)</strong>.</li>
+                        <li>Maintenance opérationnelle : analyse approfondie des logs système pour résoudre des conflits de montage de volumes persistants.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="no-img-placeholder">🐧</div>
+            <div class="card-content">
+                <h3>Optimisation Stockage Linux</h3>
+                <p class="short-desc">Intervention critique pour l'extension de stockage "à chaud" sur des serveurs Oracle Linux en production.</p>
+                <button onclick="toggleDetails(this)">Voir les détails</button>
+                <div class="project-details">
+                    <p><strong>Problématique :</strong> Saturation disque 100% sur un serveur de test sans possibilité d'arrêt de service.</p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Utilisation des utilitaires <strong>fdisk</strong> pour la gestion des partitions et <strong>resize2fs</strong> pour l'extension du système de fichiers <strong>EXT4</strong>.</li>
+                        <li>Configuration de la persistance au redémarrage via l'édition du fichier <strong>/etc/fstab</strong> en utilisant des <strong>Labels</strong>.</li>
+                        <li>Allocation de ressources via la gestion des <strong>Datastores</strong> sous environnement virtualisé.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="no-img-placeholder">🌐</div>
+            <div class="card-content">
+                <h3>MCO & Sécurité Réseau</h3>
+                <p class="short-desc">Administration quotidienne de l'infrastructure : gestion des accès et protection applicative.</p>
+                <button onclick="toggleDetails(this)">Voir les détails</button>
+                <div class="project-details">
+                    <p><strong>Réalisations techniques :</strong></p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li><strong>Active Directory :</strong> Gestion des habilitations, création d'utilisateurs et administration des groupes de sécurité.</li>
+                        <li><strong>Réseau & DNS :</strong> Configuration d'entrées DNS et ouverture de flux sur les pare-feux pour permettre la communication inter-équipements.</li>
+                        <li><strong>WAF (Web Application Firewall) :</strong> Paramétrage de règles de filtrage pour protéger les applications web contre les attaques externes (type injection ou scan).</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div class="no-img-placeholder">⚙️</div>
+            <div class="card-content">
+                <h3>Industrialisation & Patching</h3>
+                <p class="short-desc">Automatisation du maintien en condition de sécurité (MCS) via des solutions de Patch Management centralisées.</p>
+                <button onclick="toggleDetails(this)">Voir les détails</button>
+                <div class="project-details">
+                    <p><strong>Missions :</strong></p>
+                    <ul style="margin-top: 10px; padding-left: 20px;">
+                        <li>Déploiement et configuration de serveurs de test <strong>Windows Server</strong> et <strong>Linux</strong> sous environnement VMware.</li>
+                        <li><strong>Agent MEngine :</strong> Inventaire et déploiement automatisé de correctifs tiers sur le parc.</li>
+                        <li><strong>Quest KACE :</strong> Automatisation de la distribution des mises à jour logicielles et des patchs de sécurité critiques pour garantir la conformité du parc serveur.</li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+
     </div>
-</article>
+</div>
 
-<article class="project-card">
-    <img src="../images/cyber-security.jpg" alt="Sécurité DMZ et IDS" class="card-img">
-    <div class="card-content">
-        <h3>Cybersécurité : DMZ & Défense Active</h3>
-        <p class="short-desc">Sécurisation périmétrique multicouche avec OPNsense, Reverse-Proxy et IDS/IPS.</p>
-        <button onclick="toggleDetails(this)">Voir les détails</button>
-        <div class="project-details">
-            <p>
-                Conception d'une passerelle Internet sécurisée selon les recommandations de l'ANSSI pour l'entreprise GSB.<br><br>
-                <strong>Points clés :</strong><br>
-                • Architecture DMZ multi-niveaux : Isolation des services web via une cascade de pare-feux (filtrage NAT/PAT).<br>
-                • Rupture protocolaire : Mise en place d'un Reverse-Proxy pour la publication sécurisée de sites web et d'un Proxy sortant pour le contrôle des flux utilisateurs.<br>
-                • Sécurité Active : Déploiement d'une sonde IDS/IPS (Suricata) pour la détection d'intrusions (scans Nmap) et l'analyse de trafic applicatif.
-            </p>
+        <div class="pagination-container">
+            <button id="btn-p1" class="pagination-btn active" onclick="showPage(1)">1</button>
+            <button id="btn-p2" class="pagination-btn" onclick="showPage(2)">2</button>
         </div>
-    </div>
-</article>
 
-        </div>
     </main>
 
-    <footer class="spécifieprojets">
-        <p>&copy; 2024 Mon Portfolio</p>
+    <footer>
+
+
     </footer>
+    
 
     <script>
+        // Fonction pour les détails (Inchangée)
         function toggleDetails(button) {
-            // Trouve le div "project-details" voisin du bouton
             const details = button.nextElementSibling;
-            // Bascule l'affichage
             if (details.style.display === "block") {
                 details.style.display = "none";
                 button.textContent = "Voir les détails";
@@ -195,6 +260,29 @@
                 button.textContent = "Masquer";
             }
         }
+
+        // Fonction pour changer de page
+        function showPage(pageNumber) {
+            const page1 = document.getElementById('page-1');
+            const page2 = document.getElementById('page-2');
+            const btn1 = document.getElementById('btn-p1');
+            const btn2 = document.getElementById('btn-p2');
+
+            if (pageNumber === 1) {
+                page1.style.display = "block";
+                page2.style.display = "none";
+                btn1.classList.add('active');
+                btn2.classList.remove('active');
+            } else {
+                page1.style.display = "none";
+                page2.style.display = "block";
+                btn1.classList.remove('active');
+                btn2.classList.add('active');
+            }
+            // Remonte en haut de la section projets quand on change de page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     </script>
+    <script src="../scripts/footer.js"></script>
 </body>
 </html>
